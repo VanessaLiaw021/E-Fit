@@ -208,7 +208,7 @@ db.once('open', async () => {
       description:
         'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
       image: '/images/combat-gloves.webp',
-      price: 7.99,
+      price: 25.99,
       quantity: 100
     },
     {
