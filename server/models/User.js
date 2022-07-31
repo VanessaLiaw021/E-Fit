@@ -24,6 +24,7 @@ const userSchema = new Schema({
         required: true,
         minlength: 5,
     },
+    orders: [Order.schema]
 });
 
 // set up middleware to create password
