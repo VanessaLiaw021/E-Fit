@@ -32,6 +32,7 @@ const Navbar = () => {
     <Header>
         <h1>E-Fit</h1>
 
+        {/* NavBar */}
         <nav>
           <Navbar>
             <NavList>
@@ -43,8 +44,11 @@ const Navbar = () => {
             <NavList>
               <Link to='/' className="links nav-link">Products</Link>
             </NavList>
+            <NavList>
+              <Link to='/signin' className="links nav-link">Sign In</Link>
+            </NavList>
             <NavList id="user-account">
-              <Link to='/' className="links">Sign In/Sign Up</Link>
+              <Link to='/signup' className="links">Sign Up</Link>
             </NavList>
           </Navbar>
         </nav>
