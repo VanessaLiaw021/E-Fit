@@ -20,214 +20,214 @@ db.once('open', async () => {
     {
       name: 'Oversized Fleece Hoodie',
       description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+        'this Oversized Fleece Hoodie will provide all your hoodie needs with a laid back, confident look.',
       image: '/images/womens-fleece-hoodie.jpeg',
       category: categories[0]._id || categories[1]._id,
-      price: 2.99,
-      quantity: 500
+      price: 59.99,
+      quantity: 40
     },
     {
       name: 'Sports Bra',
       description:
-        'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
+        'this Sports Bra will provide support and breathability during your workout.',
       image: '/images/womens-sports-bra.webp',
       category: categories[0]._id || categories[1]._id,
-      price: 1.99,
-      quantity: 500
+      price: 30.99,
+      quantity: 50
     },
     {
       name: 'Bike Shorts',
       category: categories[0]._id || categories[1]._id,
       description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
+        'these Bike Shorts are strecthy, soft, and squat-proof. ',
       image: '/images/womens-bike-shorts.webp',
-      price: 7.99,
+      price: 26.99,
       quantity: 20
     },
     {
       name: 'Crop Top',
       category: categories[0]._id || categories[1]._id,
       description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
+        'this Crop Top is a soft breathable material designed to keep you feeling dry and comfortable during your workout.',
       image: '/images/womens-crop-top.webp',
-      price: 7.99,
-      quantity: 20
+      price: 24.99,
+      quantity: 25
     },
     {
-      name: 'Training Bra',
+      name: 'Leggings',
       category: categories[0]._id || categories[1]._id,
       description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-      image: '/images/Training-Bra.webp',
-      price: 7.99,
-      quantity: 20
+        'these Leggings are a popular choice for someone looking for flexible lightweight fit.',
+      image: '/images/leggings.webp',
+      price: 39.99,
+      quantity: 50
     },
     {
       name: 'Tanktop',
       category: categories[0]._id || categories[1]._id,
       description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
+        'this Tanktop is a staple for a summer workout.',
       image: '/images/womens-tanktop.webp',
-      price: 7.99,
-      quantity: 20
+      price: 17.99,
+      quantity: 15
     },
     {
       name: 'Blue Gym Shorts',
       category: categories[0]._id || categories[2]._id,
       description:
-        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
+        'these Blue Gym Shorts are lightweight providing ample maneuverability.',
       image: '/images/Blue-gym-shorts.webp',
-      price: 3.99,
-      quantity: 50
+      price: 20.99,
+      quantity: 20
     },
     {
       name: 'Yellow Fleece Hoodie',
       category: categories[0]._id || categories[2]._id,
       description:
-        'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
+        'this Yellow Fleece Hoodie is heavier outerwear with a color that pops.',
       image: '/images/Yellow-Fleece-hoodie.webp',
-      price: 14.99,
-      quantity: 100
+      price: 34.99,
+      quantity: 30
     },
     {
       name: 'Pullover Hoodie',
       category: categories[0]._id || categories[2]._id,
       description:
-        'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
+        'this Pullover Hoodie is a great option for outdoor sportswear during colder weather.',
       image: '/images/pullover-hoodie.webp',
-      price: 14.99,
-      quantity: 100
+      price: 37.99,
+      quantity: 25
     },
     {
       name: 'Joggers',
       category: categories[0]._id || categories[2]._id,
       description:
-        'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
+        'these Joggers are comfortable and classic! providing you with style and comfort during your workout.',
       image: '/images/mens-joggers.webp',
-      price: 14.99,
-      quantity: 100
+      price: 25.99,
+      quantity: 40
     },
     {
       name: 'No Show Socks',
       category: categories[0]._id || categories[2]._id,
       description:
-        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
+        'these No Show Socks will keep your feet covered but not to much.',
       image: '/images/noshow-socks.jpg',
-      price: 399.99,
-      quantity: 30
+      price: 10.99,
+      quantity: 60
     },
     {
       name: 'Sleeveless Top',
       category: categories[0]._id || categories[2]._id,
       description:
-        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
+        'this Sleeveless Top is a lightweight tanktop with air-activation cooling technology',
       image: '/images/mens-sleeveless-top.webp',
-      price: 399.99,
-      quantity: 30
+      price: 19.99,
+      quantity: 50
     },
     {
       name: 'Weight Bench',
       category: categories[0]._id || categories[3]._id,
       description:
-        'In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.',
+        'this Weight Bench will provide you with comfort and adjustability to get the most from your workout.',
       image: '/images/Weight-bench.jpeg',
-      price: 199.99,
-      quantity: 30
+      price: 70.99,
+      quantity: 15
     },
     {
       name: 'Adjustable Dumbells',
       category: categories[0]._id || categories[3]._id,
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.',
+        'this Adjustable Dumbells can increase or decrease the desired weight depending on current workout or person using the dumbells.',
       image: '/images/Adjustable-Dumbells.jpeg',
-      price: 9.99,
-      quantity: 100
+      price: 299.99,
+      quantity: 20
     },
     {
       name: 'Resistance Bands',
       category: categories[0]._id || categories[3]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
+      description: 'these Resistance Bands are used for general exercise, stretching, strength training, power weight programs',
       image: '/images/Resistance-Bands.webp',
-      price: 1.99,
-      quantity: 1000
+      price: 30.99,
+      quantity: 50
     },
     {
       name: 'Weighted Jump Rope',
       category: categories[0]._id || categories[3]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
+      description: 'this Weighted Jump Rope is designed for building strength and increased muscle activation.',
       image: '/images/Weighted-Jumprope.jpeg',
-      price: 1.99,
-      quantity: 1000
+      price: 19.99,
+      quantity: 40
     },
     {
       name: 'Cycling Bike',
       category: categories[0]._id || categories[3]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
+      description: 'this Cycling Bike will increase your biking capability dramatically.',
       image: '/images/Cycling-Bike.jpeg',
-      price: 1.99,
-      quantity: 1000
+      price: 799.99,
+      quantity: 5
     },
     {
       name: 'Punching Bag',
       category: categories[0]._id || categories[3]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
+      description: 'this Punching Bag is a game changer for your at home workout.',
       image: '/images/Punching-Bag.webp',
-      price: 1.99,
-      quantity: 1000
+      price: 279.99,
+      quantity: 10
     },
     {
       name: 'Steel Water Bottle',
       category: categories[0]._id || categories[4]._id,
       description:
-        'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
+        'this Steel Water Bottle will keep your water cold for a long period of time.',
       image: '/images/Steel-Water-Bottle.webp',
-      price: 2.99,
-      quantity: 1000
+      price: 11.99,
+      quantity: 100
     },
     {
       name: 'Utility Duffel Bag',
       category: categories[0]._id || categories[4]._id,
       description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
+        'this Utility Duffel Bag is an easy to carry and stylish duffel bag that will hold all you need for your workout.',
       image: '/images/utility-duffel-bag.jpeg',
-      price: 7.99,
-      quantity: 100
+      price: 50.99,
+      quantity: 25
     },
     {
       name: 'Portable Fan',
       category: categories[0]._id || categories[4]._id,
       description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
+        'this Portable Fan will provide you with nice cool air while your using a treadmill',
       image: '/images/Portable-fan.jpg',
-      price: 7.99,
-      quantity: 100
+      price: 9.99,
+      quantity: 40
     },
     {
       name: 'Combat Gloves',
       category: categories[0]._id || categories[4]._id,
       description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
+        'these Combat Gloves will provide your hands with padded protection.',
       image: '/images/combat-gloves.webp',
-      price: 7.99,
-      quantity: 100
+      price: 15.99,
+      quantity: 20
     },
     {
       name: 'Mouthguard',
       category: categories[0]._id || categories[4]._id,
       description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
+        'this Mouthguard will protect your mouth from getting damaged during boxing or other physical activites.',
       image: '/images/Mouthguard.jpeg',
       price: 7.99,
-      quantity: 100
+      quantity: 30
     },
     {
       name: 'Workout Mat',
       category: categories[0]._id || categories[4]._id,
       description:
-        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
+        'this Workout Mat will provide you with comfort and support on the ground level.',
       image: '/images/Workout-Mat.jpeg',
-      price: 9.99,
-      quantity: 600
+      price: 40.99,
+      quantity: 50
     }
   ]);
 
