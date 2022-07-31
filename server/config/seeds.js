@@ -210,6 +210,7 @@ db.once('open', async () => {
       image: '/images/combat-gloves.webp',
       price: 15.99,
       quantity: 20
+
     },
     {
       name: 'Mouthguard',
