@@ -42,7 +42,7 @@ const Navbar = () => {
               <Link to='/' className="links nav-link">Exercises</Link>
             </NavList>
             <NavList>
-              <Link to='/' className="links nav-link">Products</Link>
+              <Link to='/products' className="links nav-link">Products</Link>
             </NavList>
             <NavList>
               <Link to='/signin' className="links nav-link">Sign In</Link>

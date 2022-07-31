@@ -45,7 +45,7 @@ const Signin = () => {
       <p id="account">Don't have an account? <Link to="/signup" className="direct-signin">Sign Up</Link></p>
       <Button>Sign In</Button>
     </SignInForm>
-  )
-}
+  );
+};
 
 export default Signin;
