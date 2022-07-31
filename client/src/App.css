@@ -67,3 +67,37 @@ form h2 {
   color: #71a6d2;
 }
 /* End Signup Component */
+
+/* Start ProductList Component */
+.main {
+  margin: 80px;
+}
+
+.headings {
+  text-align: center;
+  border-top: 2px solid #71a6d2;
+  border-bottom: 2px solid #71a6d2;
+  padding: 30px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.category ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.category ul li {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+/* End ProductList Component */
