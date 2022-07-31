@@ -12,7 +12,7 @@ const Signin = () => {
     justify-content: flex-start;
     align-items: center;
     width: 30%;
-    margin: 140px auto 0 auto; 
+    margin: 250px auto 0 auto; 
     border: 1px solid black;
   `;
 

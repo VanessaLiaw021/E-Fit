@@ -13,7 +13,7 @@ const Signup = () => {
     justify-content: flex-start;
     align-items: center;
     width: 30%;
-    margin: 120px auto 0 auto; 
+    margin: 220px auto 0 auto; 
     border: 1px solid black;
   `;
 

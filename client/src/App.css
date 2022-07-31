@@ -10,6 +10,15 @@
   font-family: "Abel", sans-serif;
 }
 
+/* Start Home Component */
+.home {
+  background-image: url(./assets/images/banner.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+/* End Home Component */
+
 /* Start Navbar Component */
 .links {
   color: black;
@@ -70,7 +79,8 @@ form h2 {
 
 /* Start ProductList Component */
 .main {
-  margin: 80px;
+  margin: 160px;
+  position: relative;
 }
 
 .headings {
