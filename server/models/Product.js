@@ -19,6 +19,11 @@ const productSchema = new Schema({
     required: true,
     min: 0.01
   },
+  size: {
+    type: String,
+    required: true
+  },
+  
   quantity: {
     type: Number,
     min: 0,
