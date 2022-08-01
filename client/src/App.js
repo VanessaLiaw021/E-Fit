@@ -7,12 +7,42 @@ import Exercises from "./components/Exercises";
 import ProductList from "./components/ProductList";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { StoreProvider } from './utils/GlobalState';
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 
 //App Componennt
 function App() {
   return (
-    <Router>
+    <ApolloProvider client={client}>
+      <Router>
       <>
+      <StoreProvider>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />}/>
@@ -21,8 +51,11 @@ function App() {
           <Route path="/signin" element={<Signin />}/>
           <Route path="/signup" element={<Signup />}/>
         </Routes>
+        </StoreProvider>
       </>
     </Router>
+    </ApolloProvider>
+  
   );
 }
 
