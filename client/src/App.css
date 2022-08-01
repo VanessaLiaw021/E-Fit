@@ -15,7 +15,29 @@
   background-image: url(./assets/images/banner.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 70vh;
+  color: white;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.home h2 {
+  color: white;
+  font-size: 50px;
+  letter-spacing: 2px;
+}
+
+.home span {
+  text-transform: uppercase;
+  color: #71a6d2;
+}
+
+.home p {
+  font-size: 35px;
+  margin: 20px;
 }
 /* End Home Component */
 
@@ -34,7 +56,7 @@
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 5px 0;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 4px rgba(113, 166, 210, 0.6);
 }
 
 #user-account .links {
@@ -79,8 +101,7 @@ form h2 {
 
 /* Start ProductList Component */
 .main {
-  margin: 160px;
-  position: relative;
+  margin: 90px 100px 100px 100px;
 }
 
 .headings {

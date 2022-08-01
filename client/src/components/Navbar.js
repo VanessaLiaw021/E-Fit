@@ -13,9 +13,6 @@ const Navbar = () => {
     align-items: center;
     padding: 25px 0;
     background-color: #ffe4e1;
-    position: fixed; 
-    top: 0;
-    width: 100%;
   `;  
 
   //Styled Component for the NavBar
