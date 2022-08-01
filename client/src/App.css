@@ -142,6 +142,14 @@ form h2 {
   margin-top: 30px;
 }
 
+.card {
+  border: 3px solid #ffe4e1;
+  margin: 30px 40px;
+  padding: 30px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 .image img {
   width: 350px;
   height: 350px;
@@ -166,3 +174,58 @@ form h2 {
   transform: scale(1.1);
 }
 /* End Product Item Component */
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+
+  /* Start Navbar Component */
+  header {
+    flex-direction: column;
+  }
+
+  header ul {
+    flex-direction: column;
+  }
+  /* End Navbar Component */
+}
+
+@media only screen and (max-width: 425px) {
+
+  /* Start Product List Component */
+  .main {
+    display: block;
+    margin: 80px 10px 40px 20px;
+  }
+
+  .category ul {
+    flex-direction: column;
+  }
+  
+  .category ul li {
+    margin: 10px 0;
+    width: 100%;
+    font-size: 14px;
+  }
+  /* End Product List Component */
+
+  /* Start Product Item Component */
+  .card {
+    width: 90%;
+  }
+
+  .image img {
+    width: 200px;
+    height: 200px;
+  }
+  /* End Product Item Component */
+}
+
+@media only screen and (max-width: 325px) {
+
+  /* Start Product Item Component */
+  .main {
+    display: block;
+    margin: 70px 20px;
+  }
+  /* End Product Item Component */
+}

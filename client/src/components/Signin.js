@@ -35,7 +35,7 @@ const Signin = () => {
 
   return (
     <SignInForm>
-      <h2>Sign Up</h2>
+      <h2>Sign In</h2>
       <div className="form-group bottom-form">
         <label>Email:</label>
         <input type="text" placeholder="Email"/>

@@ -10,7 +10,7 @@ const Signup = () => {
   const SignUpForm = styled.form`
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     width: 30%;
     margin: 120px auto 0 auto; 
@@ -34,7 +34,7 @@ const Signup = () => {
   `;
 
   return (
-    <SignUpForm>
+    <SignUpForm className="form">
       <h2>Sign Up</h2>
       <div className="form-group">
         <label>First Name:</label>
