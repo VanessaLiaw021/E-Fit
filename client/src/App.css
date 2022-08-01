@@ -10,6 +10,37 @@
   font-family: "Abel", sans-serif;
 }
 
+/* Start Home Component */
+.home {
+  background-image: url(./assets/images/banner.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+  color: white;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.home h2 {
+  color: white;
+  font-size: 50px;
+  letter-spacing: 2px;
+}
+
+.home span {
+  text-transform: uppercase;
+  color: #ffe4e1;
+}
+
+.home p {
+  font-size: 35px;
+  margin: 20px;
+}
+/* End Home Component */
+
 /* Start Navbar Component */
 .links {
   color: black;
@@ -25,7 +56,7 @@
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 5px 0;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 4px rgba(113, 166, 210, 0.6);
 }
 
 #user-account .links {
@@ -70,7 +101,7 @@ form h2 {
 
 /* Start ProductList Component */
 .main {
-  margin: 80px;
+  margin: 90px 100px 40px 100px;
 }
 
 .headings {
@@ -101,3 +132,100 @@ form h2 {
   cursor: pointer;
 }
 /* End ProductList Component */
+
+/* Start Product Item Component */
+.product-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.card {
+  border: 3px solid #ffe4e1;
+  margin: 30px 40px;
+  padding: 30px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.image img {
+  width: 350px;
+  height: 350px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.card-header h3 {
+  letter-spacing: 2px;
+  color: #71a6d2;
+}
+
+.card-header p {
+  color: #71a6d2;
+}
+
+.add-cart:hover {
+  transform: scale(1.1);
+}
+/* End Product Item Component */
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+
+  /* Start Navbar Component */
+  header {
+    flex-direction: column;
+  }
+
+  header ul {
+    flex-direction: column;
+  }
+  /* End Navbar Component */
+}
+
+@media only screen and (max-width: 425px) {
+
+  /* Start Product List Component */
+  .main {
+    display: block;
+    margin: 80px 10px 40px 20px;
+  }
+
+  .category ul {
+    flex-direction: column;
+  }
+  
+  .category ul li {
+    margin: 10px 0;
+    width: 100%;
+    font-size: 14px;
+  }
+  /* End Product List Component */
+
+  /* Start Product Item Component */
+  .card {
+    width: 90%;
+  }
+
+  .image img {
+    width: 200px;
+    height: 200px;
+  }
+  /* End Product Item Component */
+}
+
+@media only screen and (max-width: 325px) {
+
+  /* Start Product Item Component */
+  .main {
+    display: block;
+    margin: 70px 20px;
+  }
+  /* End Product Item Component */
+}
