@@ -42,6 +42,10 @@
 /* End Home Component */
 
 /* Start Navbar Component */
+header h1 {
+  color: black;
+}
+
 .links {
   color: black;
   letter-spacing: 3px;
