@@ -24,7 +24,8 @@ db.once('open', async () => {
       image: '/images/womens-fleece-hoodie.jpeg',
       category: categories[0]._id || categories[1]._id,
       price: 59.99,
-      quantity: 40
+      quantity: 40,
+      size: ['S', 'M', 'L', 'XL']
     },
     {
       name: 'Sports Bra',
@@ -33,7 +34,8 @@ db.once('open', async () => {
       image: '/images/womens-sports-bra.webp',
       category: categories[0]._id || categories[1]._id,
       price: 30.99,
-      quantity: 50
+      quantity: 50,
+      size: ['S', 'M', 'L', 'XL']
     },
     {
       name: 'Bike Shorts',
@@ -42,7 +44,8 @@ db.once('open', async () => {
         'these Bike Shorts are strecthy, soft, and squat-proof. ',
       image: '/images/womens-bike-shorts.webp',
       price: 26.99,
-      quantity: 20
+      quantity: 20,
+      size: ['S', 'M', 'L', 'XL']
     },
     {
       name: 'Crop Top',
@@ -51,7 +54,8 @@ db.once('open', async () => {
         'this Crop Top is a soft breathable material designed to keep you feeling dry and comfortable during your workout.',
       image: '/images/womens-crop-top.webp',
       price: 24.99,
-      quantity: 25
+      quantity: 25,
+      size: ['S', 'M', 'L', 'XL']
     },
     {
       name: 'Leggings',
@@ -60,7 +64,8 @@ db.once('open', async () => {
         'these Leggings are a popular choice for someone looking for flexible lightweight fit.',
       image: '/images/leggings.webp',
       price: 39.99,
-      quantity: 50
+      quantity: 50,
+      size: ['S', 'M', 'L', 'XL']
     },
     {
       name: 'Tanktop',
@@ -69,7 +74,8 @@ db.once('open', async () => {
         'this Tanktop is a staple for a summer workout.',
       image: '/images/womens-tanktop.webp',
       price: 17.99,
-      quantity: 15
+      quantity: 15,
+      size: ['S', 'M', 'L', 'XL']
     },
     {
       name: 'Blue Gym Shorts',
@@ -78,7 +84,8 @@ db.once('open', async () => {
         'these Blue Gym Shorts are lightweight providing ample maneuverability.',
       image: '/images/Blue-gym-shorts.webp',
       price: 20.99,
-      quantity: 20
+      quantity: 20,
+      size: ['S', 'M', 'L', 'XL']
     },
     {
       name: 'Yellow Fleece Hoodie',
@@ -87,7 +94,8 @@ db.once('open', async () => {
         'this Yellow Fleece Hoodie is heavier outerwear with a color that pops.',
       image: '/images/Yellow-Fleece-hoodie.webp',
       price: 34.99,
-      quantity: 30
+      quantity: 30,
+      size: ['S', 'M', 'L', 'XL']
     },
     {
       name: 'Pullover Hoodie',
@@ -96,7 +104,8 @@ db.once('open', async () => {
         'this Pullover Hoodie is a great option for outdoor sportswear during colder weather.',
       image: '/images/pullover-hoodie.webp',
       price: 37.99,
-      quantity: 25
+      quantity: 25,
+      size: ['S', 'M', 'L', 'XL']
     },
     {
       name: 'Joggers',
@@ -105,7 +114,8 @@ db.once('open', async () => {
         'these Joggers are comfortable and classic! providing you with style and comfort during your workout.',
       image: '/images/mens-joggers.webp',
       price: 25.99,
-      quantity: 40
+      quantity: 40,
+      size: ['S', 'M', 'L', 'XL']
     },
     {
       name: 'No Show Socks',
@@ -114,7 +124,8 @@ db.once('open', async () => {
         'these No Show Socks will keep your feet covered but not to much.',
       image: '/images/noshow-socks.jpg',
       price: 10.99,
-      quantity: 60
+      quantity: 60,
+      size: ['S', 'M', 'L', 'XL']
     },
     {
       name: 'Sleeveless Top',
@@ -123,7 +134,8 @@ db.once('open', async () => {
         'this Sleeveless Top is a lightweight tanktop with air-activation cooling technology',
       image: '/images/mens-sleeveless-top.webp',
       price: 19.99,
-      quantity: 50
+      quantity: 50,
+      size: ['S', 'M', 'L', 'XL']
     },
     {
       name: 'Weight Bench',

@@ -21,9 +21,8 @@ const productSchema = new Schema({
   },
   size: {
     type: String,
-    required: true
+    required: false
   },
-  
   quantity: {
     type: Number,
     min: 0,
