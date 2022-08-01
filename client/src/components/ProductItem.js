@@ -74,7 +74,7 @@ function ProductItem(item) {
         </div>
         <p>{description}</p>
       </div>
-      <Button className="add-cart">Add To Cart</Button>
+      <Button onclick={addToCart()} className="add-cart">Add To Cart</Button>
     </div>
   );
 };
