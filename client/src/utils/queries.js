@@ -5,11 +5,11 @@ import {
 export const QUERY_PRODUCTS = gql`
   query getProducts($category: ID) {
     products(category: $category) {
-       _id
-        name
-        description
-        image
-        price     
+      _id
+      name
+      description
+      image
+      price     
     }
   }
 `;
