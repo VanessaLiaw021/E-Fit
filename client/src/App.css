@@ -179,6 +179,38 @@ form h2 {
 }
 /* End Product Item Component */
 
+/* Start Exercise Component */
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.search-form input {
+  height: 40px;
+  width: 30%;
+  font-size: 16px;
+  padding-left: 10px;
+  margin-right: 15px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.search-form button {
+  height: 35px;
+  width: 80px;
+  border: 1px solid #71a6d2;
+  background-color: #71a6d2;
+  color: white;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 16px;
+  box-shadow: 4px 4px 4px rgba(113, 166, 210, 0.6);
+  cursor: pointer;
+}
+/* End Exercise Component */
+
 /* Media Queries */
 @media only screen and (max-width: 768px) {
 
