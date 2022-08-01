@@ -47,7 +47,9 @@ const Category = () => {
       <div className="category">
         <ul>
           {categories.map(item => {
-            <li key={item.id} onClick={() => { handleClick(item._id)}}></li>
+            return (
+              <li key={item.id} onClick={() => { handleClick(item._id)}}></li>
+            )
           })}
         </ul>
       </div>
