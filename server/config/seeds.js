@@ -22,7 +22,7 @@ db.once('open', async () => {
       description:
         'this Oversized Fleece Hoodie will provide all your hoodie needs with a laid back, confident look.',
       image: '/images/womens-fleece-hoodie.jpeg',
-      category: categories[0]._id || categories[1]._id,
+      category: categories[1]._id,
       price: 59.99,
       quantity: 40,
       size: ['S', 'M', 'L', 'XL']
@@ -32,14 +32,14 @@ db.once('open', async () => {
       description:
         'this Sports Bra will provide support and breathability during your workout.',
       image: '/images/womens-sports-bra.webp',
-      category: categories[0]._id || categories[1]._id,
+      category: categories[1]._id,
       price: 30.99,
       quantity: 50,
       size: ['S', 'M', 'L', 'XL']
     },
     {
       name: 'Bike Shorts',
-      category: categories[0]._id || categories[1]._id,
+      category: categories[1]._id,
       description:
         'these Bike Shorts are strecthy, soft, and squat-proof. ',
       image: '/images/womens-bike-shorts.webp',
@@ -49,7 +49,7 @@ db.once('open', async () => {
     },
     {
       name: 'Crop Top',
-      category: categories[0]._id || categories[1]._id,
+      category: categories[1]._id,
       description:
         'this Crop Top is a soft breathable material designed to keep you feeling dry and comfortable during your workout.',
       image: '/images/womens-crop-top.webp',
@@ -59,7 +59,7 @@ db.once('open', async () => {
     },
     {
       name: 'Leggings',
-      category: categories[0]._id || categories[1]._id,
+      category: categories[1]._id,
       description:
         'these Leggings are a popular choice for someone looking for flexible lightweight fit.',
       image: '/images/leggings.webp',
@@ -79,7 +79,7 @@ db.once('open', async () => {
     },
     {
       name: 'Blue Gym Shorts',
-      category: categories[0]._id || categories[2]._id,
+      category: categories[2]._id,
       description:
         'these Blue Gym Shorts are lightweight providing ample maneuverability.',
       image: '/images/Blue-gym-shorts.webp',
@@ -89,7 +89,7 @@ db.once('open', async () => {
     },
     {
       name: 'Yellow Fleece Hoodie',
-      category: categories[0]._id || categories[2]._id,
+      category: categories[2]._id,
       description:
         'this Yellow Fleece Hoodie is heavier outerwear with a color that pops.',
       image: '/images/Yellow-Fleece-hoodie.webp',
@@ -99,7 +99,7 @@ db.once('open', async () => {
     },
     {
       name: 'Pullover Hoodie',
-      category: categories[0]._id || categories[2]._id,
+      category: categories[2]._id,
       description:
         'this Pullover Hoodie is a great option for outdoor sportswear during colder weather.',
       image: '/images/pullover-hoodie.webp',
@@ -109,7 +109,7 @@ db.once('open', async () => {
     },
     {
       name: 'Joggers',
-      category: categories[0]._id || categories[2]._id,
+      category: categories[2]._id,
       description:
         'these Joggers are comfortable and classic! providing you with style and comfort during your workout.',
       image: '/images/mens-joggers.webp',
@@ -119,7 +119,7 @@ db.once('open', async () => {
     },
     {
       name: 'No Show Socks',
-      category: categories[0]._id || categories[2]._id,
+      category: categories[2]._id,
       description:
         'these No Show Socks will keep your feet covered but not to much.',
       image: '/images/noshow-socks.jpg',
@@ -129,7 +129,7 @@ db.once('open', async () => {
     },
     {
       name: 'Sleeveless Top',
-      category: categories[0]._id || categories[2]._id,
+      category: categories[2]._id,
       description:
         'this Sleeveless Top is a lightweight tanktop with air-activation cooling technology',
       image: '/images/mens-sleeveless-top.webp',
@@ -139,7 +139,7 @@ db.once('open', async () => {
     },
     {
       name: 'Weight Bench',
-      category: categories[0]._id || categories[3]._id,
+      category: categories[3]._id,
       description:
         'this Weight Bench will provide you with comfort and adjustability to get the most from your workout.',
       image: '/images/Weight-bench.jpeg',
@@ -148,7 +148,7 @@ db.once('open', async () => {
     },
     {
       name: 'Adjustable Dumbells',
-      category: categories[0]._id || categories[3]._id,
+      category: categories[3]._id,
       description:
         'this Adjustable Dumbells can increase or decrease the desired weight depending on current workout or person using the dumbells.',
       image: '/images/Adjustable-Dumbells.jpeg',
@@ -157,7 +157,7 @@ db.once('open', async () => {
     },
     {
       name: 'Resistance Bands',
-      category: categories[0]._id || categories[3]._id,
+      category: categories[3]._id,
       description: 'these Resistance Bands are used for general exercise, stretching, strength training, power weight programs',
       image: '/images/Resistance-Bands.webp',
       price: 30.99,
@@ -165,7 +165,7 @@ db.once('open', async () => {
     },
     {
       name: 'Weighted Jump Rope',
-      category: categories[0]._id || categories[3]._id,
+      category: categories[3]._id,
       description: 'this Weighted Jump Rope is designed for building strength and increased muscle activation.',
       image: '/images/Weighted-Jumprope.jpeg',
       price: 19.99,
@@ -173,7 +173,7 @@ db.once('open', async () => {
     },
     {
       name: 'Cycling Bike',
-      category: categories[0]._id || categories[3]._id,
+      category: categories[3]._id,
       description: 'this Cycling Bike will increase your biking capability dramatically.',
       image: '/images/Cycling-Bike.jpeg',
       price: 799.99,
@@ -181,7 +181,7 @@ db.once('open', async () => {
     },
     {
       name: 'Punching Bag',
-      category: categories[0]._id || categories[3]._id,
+      category: categories[3]._id,
       description: 'this Punching Bag is a game changer for your at home workout.',
       image: '/images/Punching-Bag.webp',
       price: 279.99,
@@ -189,7 +189,7 @@ db.once('open', async () => {
     },
     {
       name: 'Steel Water Bottle',
-      category: categories[0]._id || categories[4]._id,
+      category: categories[4]._id,
       description:
         'this Steel Water Bottle will keep your water cold for a long period of time.',
       image: '/images/Steel-Water-Bottle.webp',
@@ -198,7 +198,7 @@ db.once('open', async () => {
     },
     {
       name: 'Utility Duffel Bag',
-      category: categories[0]._id || categories[4]._id,
+      category: categories[4]._id,
       description:
         'this Utility Duffel Bag is an easy to carry and stylish duffel bag that will hold all you need for your workout.',
       image: '/images/utility-duffel-bag.jpeg',
@@ -207,7 +207,7 @@ db.once('open', async () => {
     },
     {
       name: 'Portable Fan',
-      category: categories[0]._id || categories[4]._id,
+      category: categories[4]._id,
       description:
         'this Portable Fan will provide you with nice cool air while your using a treadmill',
       image: '/images/Portable-fan.jpg',
@@ -216,7 +216,7 @@ db.once('open', async () => {
     },
     {
       name: 'Combat Gloves',
-      category: categories[0]._id || categories[4]._id,
+      category: categories[4]._id,
       description:
         'these Combat Gloves will provide your hands with padded protection.',
       image: '/images/combat-gloves.webp',
@@ -226,7 +226,7 @@ db.once('open', async () => {
     },
     {
       name: 'Mouthguard',
-      category: categories[0]._id || categories[4]._id,
+      category: categories[4]._id,
       description:
         'this Mouthguard will protect your mouth from getting damaged during boxing or other physical activites.',
       image: '/images/Mouthguard.jpeg',
@@ -235,7 +235,7 @@ db.once('open', async () => {
     },
     {
       name: 'Workout Mat',
-      category: categories[0]._id || categories[4]._id,
+      category: categories[4]._id,
       description:
         'this Workout Mat will provide you with comfort and support on the ground level.',
       image: '/images/Workout-Mat.jpeg',

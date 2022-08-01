@@ -6,6 +6,7 @@ import { UPDATE_PRODUCTS } from '../utils/actions';
 import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS, QUERY_ALL_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
+import Category from './Category';
 import Footer from './Footer';
 
 //ProductList Component
@@ -50,15 +51,7 @@ const ProductList = () => {
       <div className="main">
         <h2 className="headings">Products</h2>
 
-        <div className="category">
-          <ul>
-            <li>All</li>
-            <li>Women's Apparel</li>
-            <li>Men's Apparel</li>
-            <li>Equipments</li>
-            <li>Accessories</li>
-          </ul>
-        </div>
+        <Category />
 
         <div className="product-card">
           {filterProducts().map((product) => (
