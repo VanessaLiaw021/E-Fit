@@ -1,22 +1,21 @@
-import React from 'react';
-import styled from 'styled-components';
+//Import required packages and files
+import React from "react";
 import { Link } from "react-router-dom";
 import { pluralize } from "../utils/helpers"
 import { useStoreContext } from "../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 
-//Product item Component
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
 
   const {
     image,
     name,
+    description,
     _id,
     price,
-    quantity,
-    description
+    quantity
   } = item;
 
   const { cart } = state
@@ -40,44 +39,26 @@ function ProductItem(item) {
       });
       idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
     }
-  };
-
-  //Styled Components for Button
-  const Button = styled.button`
-    background-color: #71a6d2;
-    border: none;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    box-shadow: 4px 4px 4px rgba(113, 166, 210, 0.6);
-    width: 100px;
-    height: 30px;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    display: block;
-    margin: 20px auto 0 auto;
-  `;
+  }
 
   return (
     <div className="card">
-      
-      <div className="image">
+      <Link to={`/products/${_id}`}>
         <img
-          src={image}
           alt={name}
+          src={`/images/${image}`}
         />
-      </div>
-      <div className="content">
-        <div className="card-header">
-          <h3>{name}</h3>
-          <p>{price}</p>
-        </div>
+        <p>{name}</p>
+      </Link>
+      <div>
         <p>{description}</p>
+        <div>{quantity} {pluralize("item", quantity)} in stock</div>
+        <span>${price}</span>
       </div>
-      <Button onclick={addToCart()} className="add-cart">Add To Cart</Button>
+      <button onClick={addToCart}>Add to cart</button>
     </div>
   );
 };
 
-//Export Product Item
+//Export ProductItem
 export default ProductItem;
