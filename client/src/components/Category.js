@@ -12,28 +12,31 @@ import { idbPromise } from '../utils/helpers';
 const Category = () => {
   const [state, dispatch] = useStoreContext();
 
-  const { categories } = state;
+ // const { categories } = state;
 
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
-  useEffect(() => {
-    if (categoryData) {
-      dispatch({
-        type: UPDATE_CATEGORIES,
-        categories: categoryData.categories,
-      });
-      categoryData.categories.forEach((category) => {
-        idbPromise('categories', 'put', category);
-      });
-    } else if (!loading) {
-      idbPromise('categories', 'get').then((categories) => {
-        dispatch({
-          type: UPDATE_CATEGORIES,
-          categories: categories,
-        });
-      });
-    }
-  }, [categoryData, loading, dispatch]);
+  const categories = categoryData?.categories || [];
+
+  // useEffect(() => {
+  //   if (categoryData) {
+  //     dispatch({
+  //       type: UPDATE_CATEGORIES,
+  //       categories: categoryData.categories,
+  //     });
+  //     categoryData.categories.forEach((category) => {
+  //       idbPromise('categories', 'put', category);
+  //     });
+  //   } else if (!loading) {
+  //     idbPromise('categories', 'get').then((categories) => {
+  //       dispatch({
+  //         type: UPDATE_CATEGORIES,
+  //         categories: categories,
+  //       });
+  //     });
+  //   }
+
+  // }, [categoryData, loading, dispatch]);
 
   const handleClick = (id) => {
     dispatch({
