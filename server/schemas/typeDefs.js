@@ -14,7 +14,7 @@ const typeDefs = gql`
     price: Float
     quantity: Int
     category: Category
-    size: String
+    size: [String]
   }
 
   type Order {

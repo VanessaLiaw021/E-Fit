@@ -35,7 +35,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
 //App Componennt
 function App() {
   return (
