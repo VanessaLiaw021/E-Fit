@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <>
     <div className="main home">
-      <h2>Want to start <span>Excercising</span> but don't know where to start?</h2>
+      <h2>Want to start <span>Exercising</span> but don't know where to start?</h2>
       <p>Click below to view exercising ideas or view our products</p>
 
       <div className="buttons">

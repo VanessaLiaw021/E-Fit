@@ -14,6 +14,8 @@ const Signin = () => {
     width: 30%;
     margin: 150px auto 0 auto; 
     border: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   `;
 
   //Styled Components for Button

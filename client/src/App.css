@@ -32,7 +32,7 @@
 
 .home span {
   text-transform: uppercase;
-  color: #71a6d2;
+  color: #ffe4e1;
 }
 
 .home p {
@@ -101,7 +101,7 @@ form h2 {
 
 /* Start ProductList Component */
 .main {
-  margin: 90px 100px 100px 100px;
+  margin: 90px 100px 40px 100px;
 }
 
 .headings {
@@ -132,3 +132,37 @@ form h2 {
   cursor: pointer;
 }
 /* End ProductList Component */
+
+/* Start Product Item Component */
+.product-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.image img {
+  width: 350px;
+  height: 350px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.card-header h3 {
+  letter-spacing: 2px;
+  color: #71a6d2;
+}
+
+.card-header p {
+  color: #71a6d2;
+}
+
+.add-cart:hover {
+  transform: scale(1.1);
+}
+/* End Product Item Component */
