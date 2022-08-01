@@ -13,9 +13,10 @@ const Signin = () => {
     align-items: center;
     width: 30%;
     margin: 150px auto 0 auto; 
-    border: 1px solid black;
+    border: 3px solid #ffe4e1;
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    box-shadow: 4px 4px 4px rgba(255, 228, 225, 0.4);
   `;
 
   //Styled Components for Button
