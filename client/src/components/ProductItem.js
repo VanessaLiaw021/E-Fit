@@ -60,6 +60,7 @@ function ProductItem(item) {
 
   return (
     <div className="card">
+      
       <div className="image">
         <img
           src={image}
