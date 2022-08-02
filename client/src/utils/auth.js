@@ -1,55 +1,45 @@
-//Import required packages
 import decode from 'jwt-decode';
 
-//Class AuthService
 class AuthService {
+  getProfile() {
+    return decode(this.getToken());
+  }
 
-  //Get the user profile 
-  getProfile() { return decode(this.getToken()) };
-
-  //Function that see if user logged in 
   loggedIn() {
+    // Checks if there is a saved token and it's still valid
     const token = this.getToken();
     return !!token && !this.isTokenExpired(token);
-  };
+  }
 
-  //Function that see if token is expired 
   isTokenExpired(token) {
     try {
       const decoded = decode(token);
       if (decoded.exp < Date.now() / 1000) {
-          return true;
-      } else {
-          return false;
-      };
+        return true;
+      } else return false;
     } catch (err) {
       return false;
-    };
-  };
+    }
+  }
 
-  //Function that get the token 
-  getToken() { return localStorage.getItem('id_token') };
+  getToken() {
+    // Retrieves the user token from localStorage
+    return localStorage.getItem('id_token');
+  }
 
-  //Function that logged in user
   login(idToken) {
-
-    //Save user token to local storage
+    // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
 
-    //Reload the page to
     window.location.assign('/');
-  };
+  }
 
-  //Function that logout user 
   logout() {
-
-    //Clear user token 
+    // Clear user token and profile data from localStorage
     localStorage.removeItem('id_token');
-
-    //Reload the page and reset the state of application
+    // this will reload the page and reset the state of the application
     window.location.assign('/');
-  };
-};
+  }
+}
 
-//Export AuthService
 export default new AuthService();
