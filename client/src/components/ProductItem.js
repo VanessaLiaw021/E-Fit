@@ -61,7 +61,7 @@ function ProductItem(item) {
   return (
     <div className="card">
       <Link to={`/products/${_id}`}>
-        <img alt={name} src={`../assets/images/${image}`}/>
+        <img alt={name} src={`/images/${image}`}/>
       </Link>
       <div className="card-header">
         <h3>{name}</h3>
