@@ -246,7 +246,43 @@ form h2 {
 /* End Exercise Component */
 
 /* Media Queries */
+@media only screen and (max-width: 1440px) {
+
+  /* Start Home Component */
+  .home h2 {
+    font-size: 45px;
+  }
+  /* End Home Component */
+}
+
+@media only screen and (max-width: 1024px) {
+
+  /* Start Home Component */
+  .home h2 {
+    font-size: 28px;
+  }
+
+  .home p {
+    font-size: 25px;
+  }
+  /* End Home Component */
+}
+
 @media only screen and (max-width: 768px) {
+
+  /* Start Home Component */
+  .home {
+    height: 50vh;
+  }
+
+  .home h2 {
+    font-size: 18px;
+  }
+
+  .home p {
+    font-size: 16px;
+  }
+  /* End Home Component */
 
   /* Start Navbar Component */
   header {
@@ -260,6 +296,34 @@ form h2 {
 }
 
 @media only screen and (max-width: 425px) {
+
+  /* Start Home Component */
+  .home {
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home h2 {
+    font-size: 16px;
+    text-align: center;
+    padding-top: 80px;
+    margin: 0 10px;
+  }
+
+  .home p {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .home button {
+    width: 100px;
+    display: block;
+    margin: 20px auto;
+  }
+  /* End Home Component */
 
   /* Start Product List Component */
   .main {

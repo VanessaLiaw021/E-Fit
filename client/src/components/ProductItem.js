@@ -29,7 +29,7 @@ function ProductItem(item) {
   const {
     image,
     name,
-    description,
+    size,
     _id,
     price,
     quantity
@@ -67,6 +67,7 @@ function ProductItem(item) {
         <h3>{name}</h3>
         <p>${price}</p>
       </div>
+      <p>{size}</p>
       <div className="card-bottom">
         <Button onClick={addToCart} className="add-cart">Add to cart</Button>
         <p><span>{quantity}</span> {pluralize("item", quantity)} in stock</p>
