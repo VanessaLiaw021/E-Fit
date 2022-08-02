@@ -319,6 +319,18 @@ form h2 {
   margin-bottom: 20px;
   margin-right: 20px;
 }
+
+.price {
+  font-size: 28px;
+  color: #71a6d2;
+}
+
+.total {
+  font-size: 30px;
+  margin-right: 15px;
+  text-transform: uppercase;
+  color: black;
+}
 /* End CartItem Component */
 
 /* Media Queries */
