@@ -38,12 +38,12 @@ const Navbar = ()  => {
       return (
         <>
         <Dropdown>
-          <Dropdown.Toggle id="dropdown-basic">
+          <Dropdown.Toggle id="dropdown-basic" className="dropdown-icon">
             <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Order History</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Favorites</Dropdown.Item>
+            <Dropdown.Item><Link to="/order">Order History</Link></Dropdown.Item>
+            <Dropdown.Item><Link to="/favorites">Favorites</Link></Dropdown.Item>
             <Dropdown.Item href="#/action-3"><a href="/" onClick={() => Auth.logout()} className="logout">Logout</a></Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
@@ -83,7 +83,7 @@ const Navbar = ()  => {
             <Link to='/products' className="links nav-link middle-nav">Products</Link>
           </NavList>
           <NavList>
-            <Link to='/products' className="links nav-link middle-nav"><FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></Link>
+            <Link to='/carts' className="links nav-link middle-nav"><FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></Link>
           </NavList>
           {showNavBar()}
         </NavbarWrapper>

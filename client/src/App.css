@@ -74,6 +74,10 @@ header h1 {
   color: white;
   padding: 0 15px;
 }
+
+.dropdown-icon {
+  background-color: #71a6d2;
+}
 /* End Navbar Component */
 
 /* Start Signup Component */
