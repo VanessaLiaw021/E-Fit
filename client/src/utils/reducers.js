@@ -1,10 +1,14 @@
-import { useReducer } from "react";
+import {
+  useReducer
+} from "react";
 import {
   UPDATE_PRODUCTS,
   ADD_TO_CART,
   UPDATE_CART_QUANTITY,
   REMOVE_FROM_CART,
+  ADD_TO_FAVORITE,
   ADD_MULTIPLE_TO_CART,
+  ADD_MULTIPLE_TO_FAVORITES,
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
   CLEAR_CART,
@@ -23,10 +27,21 @@ export const reducer = (state, action) => {
       return {
         ...state,
         cartOpen: true,
-        cart: [...state.cart, action.product],
+          cart: [...state.cart, action.product],
+      };
+    case ADD_TO_FAVORITE:
+      return {
+        ...state,
+        cartOpen: true,
+          cart: [...state.cart, action.product],
       };
 
     case ADD_MULTIPLE_TO_CART:
+      return {
+        ...state,
+        cart: [...state.cart, ...action.products],
+      };
+      case ADD_MULTIPLE_TO_FAVORITES:
       return {
         ...state,
         cart: [...state.cart, ...action.products],
@@ -36,12 +51,12 @@ export const reducer = (state, action) => {
       return {
         ...state,
         cartOpen: true,
-        cart: state.cart.map(product => {
-          if (action._id === product._id) {
-            product.purchaseQuantity = action.purchaseQuantity
-          }
-          return product
-        })
+          cart: state.cart.map(product => {
+            if (action._id === product._id) {
+              product.purchaseQuantity = action.purchaseQuantity
+            }
+            return product
+          })
       };
 
     case REMOVE_FROM_CART:
@@ -52,14 +67,14 @@ export const reducer = (state, action) => {
       return {
         ...state,
         cartOpen: newState.length > 0,
-        cart: newState
+          cart: newState
       };
 
     case CLEAR_CART:
       return {
         ...state,
         cartOpen: false,
-        cart: []
+          cart: []
       };
 
     case TOGGLE_CART:
@@ -80,8 +95,8 @@ export const reducer = (state, action) => {
         currentCategory: action.currentCategory
       }
 
-    default:
-      return state;
+      default:
+        return state;
   }
 };
 
