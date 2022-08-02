@@ -153,6 +153,16 @@ form h2 {
   letter-spacing: 2px;
   cursor: pointer;
 }
+
+.category button {
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.category button:hover {
+  text-decoration: underline;
+  color: #71a6d2;
+}
 /* End Category Component */
 
 /* Start Product Item Component */
