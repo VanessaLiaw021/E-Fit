@@ -130,6 +130,10 @@ form h2 {
   text-transform: uppercase;
 }
 
+.category button {
+  all: unset;
+}
+
 .category ul {
   display: flex;
   justify-content: center;
