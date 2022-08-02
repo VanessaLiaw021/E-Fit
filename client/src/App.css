@@ -59,7 +59,8 @@ header h1 {
 
 .logout {
   line-height: 40px;
-  color: black;
+  color: #71a6d2;
+  text-decoration: none;
 }
 
 #user-account {
@@ -78,6 +79,12 @@ header h1 {
 .dropdown-icon {
   background-color: #71a6d2;
 }
+
+.dropdown-list {
+  text-decoration: none;
+  color: black;
+}
+
 /* End Navbar Component */
 
 /* Start Signup Component */

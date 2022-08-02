@@ -42,15 +42,11 @@ const Navbar = ()  => {
             <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <Dropdown.Item><Link to="/order">Order History</Link></Dropdown.Item>
-            <Dropdown.Item><Link to="/favorites">Favorites</Link></Dropdown.Item>
-            <Dropdown.Item href="#/action-3"><a href="/" onClick={() => Auth.logout()} className="logout">Logout</a></Dropdown.Item>
+            <Dropdown.Item><Link to="/orders" className="dropdown-list">Order History</Link></Dropdown.Item>
+            <Dropdown.Item><Link to="/favorites" className="dropdown-list">Favorites</Link></Dropdown.Item>
+            <Dropdown.Item className="logout-wrapper"><a href="/" onClick={() => Auth.logout()} className="logout">Logout</a></Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        {/* <NavList>
-          <Link to="/products" className="links nav-link">Order History</Link>
-        </NavList>
-        <NavList className="links nav-link middle-nav"><a href="/" onClick={() => Auth.logout()} className="logout">Logout</a></NavList> */}
         </>
       )
     } else {
