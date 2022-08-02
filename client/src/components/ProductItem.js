@@ -3,9 +3,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { pluralize } from "../utils/helpers"
 import { useStoreContext } from "../utils/GlobalState";
-import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
+import { ADD_TO_CART, UPDATE_CART_QUANTITY, ADD_TO_FAVORITE} from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 import styled from "styled-components";
+
 
 //Styled Components for Button
 const Button = styled.button`
@@ -58,6 +59,21 @@ function ProductItem(item) {
       idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
     }
   }
+  const addToFavorite = () => {
+    const itemInFavorite = cart.find((favoriteItem) => favoriteItem._id === _id)
+    if (itemInFavorite) {
+      idbPromise('favorite', 'put', {
+        ...itemInFavorite,
+   
+      });
+    } else {
+      dispatch({
+        type: ADD_TO_FAVORITE,
+        product: { ...item }
+      });
+      idbPromise('favorite', 'put', { ...item });
+    }
+  }
   console.log(size, "Sizes");
   return (
     <div className="cardWrapper">
@@ -71,6 +87,7 @@ function ProductItem(item) {
       <p>{size}</p>
       <div className="card-bottom">
         <Button onClick={addToCart} className="add-cart">Add to cart</Button>
+        <Button onClick={addToFavorite} className="add-cart">Add to Favorites</Button>
         <p><span>{quantity}</span> {pluralize("item", quantity)} in stock</p>
       </div>
     </div>
