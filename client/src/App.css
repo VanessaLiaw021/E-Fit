@@ -184,8 +184,13 @@ form h2 {
 }
 
 .card img {
-  width: 350px;
-  height: 350px;
+  width: 275px;
+  height: 270px;
+  margin: 0 auto 5px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 }
 
 .card-header {

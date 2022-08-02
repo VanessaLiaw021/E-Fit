@@ -2,21 +2,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
+ //Styled component for fotter
+ const FooterWrapper = styled.footer`
+  text-align: center;
+  background-color: #ffe4e1;
+  padding: 20px;
+  letter-spacing: 2px;
+`;
+
 //Footer Component
 const Footer = () => {
 
-  //Styled component for fotter
-  const Footer = styled.footer`
-    text-align: center;
-    background-color: #ffe4e1;
-    padding: 20px;
-    letter-spacing: 2px;
-  `;
-
   return (
-    <Footer>
+    <FooterWrapper>
         <p>@2022 Created by Vanessa Liaw, Graham Purnell, Marquise Allen, Raymond Dover</p>
-    </Footer>
+    </FooterWrapper>
   )
 }
 

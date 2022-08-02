@@ -34,10 +34,10 @@ const Category = () => {
     }
   }, [categoryData, loading, dispatch]);
 
-  const handleClick = (id) => {
+  const handleClick = (name, id) => {
     dispatch({
       type: UPDATE_CURRENT_CATEGORY,
-      currentCategory: id,
+      currentCategory: name === 'All' ? null : id,
     });
   };
 
@@ -47,7 +47,7 @@ const Category = () => {
         {categories.map((item) => (
           <button key={item._id}
             onClick={() => {
-              handleClick(item._id);
+              handleClick(item.name, item._id);
             }}
           >{item.name}</button>
         ))}

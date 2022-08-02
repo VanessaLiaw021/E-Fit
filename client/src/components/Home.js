@@ -4,24 +4,24 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 
+//Styled component for buttons 
+const Button = styled.button`
+  background-color: #71a6d2;
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 140px;
+  margin: 0 20px;
+  height: 40px;
+  font-size: 15px;
+  color: white;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 4px 4px 4px rgba(113, 166, 210, 0.6);
+`;
+
 //Home Component
 const Home = () => {
-
-  //Styled component for buttons 
-  const Button = styled.button`
-    background-color: #71a6d2;
-    border: none;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    width: 140px;
-    margin: 0 20px;
-    height: 40px;
-    font-size: 15px;
-    color: white;
-    letter-spacing: 2px;
-    cursor: pointer;
-    box-shadow: 4px 4px 4px rgba(113, 166, 210, 0.6);
-  `;
 
   return (
     <>
