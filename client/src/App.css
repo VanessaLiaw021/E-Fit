@@ -55,6 +55,11 @@ header h1 {
   line-height: 40px;
 }
 
+.logout {
+  line-height: 40px;
+  color: black;
+}
+
 #user-account {
   background-color: #71a6d2;
   border-top-left-radius: 10px;
