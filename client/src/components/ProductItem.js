@@ -7,22 +7,23 @@ import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 import styled from "styled-components";
 
+//Styled Components for Button
+const Button = styled.button`
+background-color: #71a6d2;
+border: none;
+border-top-left-radius: 10px;
+border-bottom-right-radius: 10px;
+padding: 5px 0;
+box-shadow: 4px 4px 4px rgba(113, 166, 210, 0.6);
+width: 80px;
+color: white;
+font-size: 16px;
+margin: 5px 0 10px 0;
+cursor: pointer;
+`;
+
 function ProductItem(item) {
 
-  //Styled Components for Button
-  const Button = styled.button`
-    background-color: #71a6d2;
-    border: none;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 5px 0;
-    box-shadow: 4px 4px 4px rgba(113, 166, 210, 0.6);
-    width: 80px;
-    color: white;
-    font-size: 16px;
-    margin: 5px 0 10px 0;
-    cursor: pointer;
-  `;
 
   const [state, dispatch] = useStoreContext();
 
@@ -34,7 +35,7 @@ function ProductItem(item) {
     price,
     quantity
   } = item;
-
+  console.log(item, "items");
   const { cart } = state
 
   const addToCart = () => {
@@ -57,7 +58,7 @@ function ProductItem(item) {
       idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
     }
   }
-
+  console.log(size, "Sizes");
   return (
     <div className="card">
       <Link to={`/products/${_id}`}>

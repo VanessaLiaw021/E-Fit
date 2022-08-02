@@ -6,23 +6,23 @@ import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 import styled from 'styled-components';
 
+//Styled component for button
+const Button = styled.button`
+background-color: #71a6d2;
+border: none;
+border-top-left-radius: 10px;
+border-bottom-right-radius: 10px;
+padding: 5px 0;
+box-shadow: 4px 4px 4px rgba(113, 166, 210, 0.6);
+width: 80px;
+color: white;
+font-size: 18px;
+margin: 5px 0 20px 0;
+cursor: pointer;
+`;
+
 //Signup Component
 const Signup = (props) => {
-
-  //Styled component for button
-  const Button = styled.button`
-    background-color: #71a6d2;
-    border: none;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 5px 0;
-    box-shadow: 4px 4px 4px rgba(113, 166, 210, 0.6);
-    width: 80px;
-    color: white;
-    font-size: 18px;
-    margin: 5px 0 20px 0;
-    cursor: pointer;
-  `;
 
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [addUser] = useMutation(ADD_USER);

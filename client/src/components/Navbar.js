@@ -4,30 +4,31 @@ import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
+
+//Styled Component for the Header
+const Header = styled.header`
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 25px 30px;
+background-color: #ffe4e1;
+`;  
+
+//Styled Component for the NavBar
+const NavbarWrapper = styled.ul`
+display: flex;
+list-style-type: none; 
+`;
+
+//Styled Component for the NavBar List
+const NavList = styled.li`
+margin: 0 18px;
+font-size: 20px;
+line-height: 30px;
+`;
+
 //Navbar Component
 const Navbar = ()  => {
-
-  //Styled Component for the Header
-  const Header = styled.header`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 30px;
-    background-color: #ffe4e1;
-  `;  
-
-  //Styled Component for the NavBar
-  const Navbar = styled.ul`
-    display: flex;
-    list-style-type: none; 
-  `;
-
-  //Styled Component for the NavBar List
-  const NavList = styled.li`
-    margin: 0 18px;
-    font-size: 20px;
-    line-height: 30px;
-  `;
 
   //Function to deteremine if user is logged in. It deteremine which navlink to display 
   const showNavBar = () => {
@@ -57,7 +58,7 @@ const Navbar = ()  => {
     <Header>
       <Link to="/"><h1>E-Fit</h1></Link>
       <nav>
-        <Navbar>
+        <NavbarWrapper>
           <NavList>
             <Link to='/' className="links nav-link middle-nav">Home</Link>
           </NavList>
@@ -68,7 +69,7 @@ const Navbar = ()  => {
             <Link to='/products' className="links nav-link middle-nav">Products</Link>
           </NavList>
           {showNavBar()}
-        </Navbar>
+        </NavbarWrapper>
       </nav>
     </Header>
   );
