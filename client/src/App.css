@@ -169,6 +169,7 @@ form h2 {
   padding: 30px;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  width: 20%;
 }
 
 .image img {
@@ -193,6 +194,21 @@ form h2 {
 
 .add-cart:hover {
   transform: scale(1.1);
+}
+
+.card-bottom {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.card-bottom p {
+  font-size: 14px; 
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+.card-bottom p span {
+  color: #71a6d2;
 }
 /* End Product Item Component */
 

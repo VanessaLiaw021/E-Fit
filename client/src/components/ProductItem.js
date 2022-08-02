@@ -62,14 +62,15 @@ function ProductItem(item) {
     <div className="card">
       <Link to={`/products/${_id}`}>
         <img alt={name} src={`../assets/images/${image}`}/>
-        <p>{name}</p>
       </Link>
-      <div>
-        <p>{description}</p>
-        <div>{quantity} {pluralize("item", quantity)} in stock</div>
-        <span>${price}</span>
+      <div className="card-header">
+        <h3>{name}</h3>
+        <p>${price}</p>
       </div>
-      <Button onClick={addToCart}>Add to cart</Button>
+      <div className="card-bottom">
+        <Button onClick={addToCart} className="add-cart">Add to cart</Button>
+        <p><span>{quantity}</span> {pluralize("item", quantity)} in stock</p>
+      </div>
     </div>
   );
 };
