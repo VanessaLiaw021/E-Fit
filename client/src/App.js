@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./components/Home";
 import Exercises from "./components/Exercises";
 import ProductList from "./components/ProductList";
+import Cart from "./components/Cart";
+import Favorites from './components/Favorites';
+import OrderHistory from './components/OrderHistory';
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import {
@@ -47,6 +50,9 @@ function App() {
           <Route path="/" element={<Home />}/>
           <Route path="/exercises" element={<Exercises />}/>
           <Route path="/products" element={<ProductList />}/>
+          <Route path="/carts" element={<Cart />}/>
+          <Route path="/favorites" element={<Favorites />}/>
+          <Route path="/orders" element={<OrderHistory />}/>
           <Route path="/signin" element={<Signin />}/>
           <Route path="/signup" element={<Signup />}/>
         </Routes>
@@ -54,9 +60,8 @@ function App() {
       </>
     </Router>
     </ApolloProvider>
-  
   );
-}
+};
 
 //Export App
 export default App;

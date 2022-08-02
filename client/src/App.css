@@ -44,15 +44,23 @@
 /* Start Navbar Component */
 header h1 {
   color: black;
+  text-decoration: none;
 }
 
 .links {
   color: black;
   letter-spacing: 3px;
+  text-decoration: none;
 }
 
 .nav-link {
   line-height: 40px;
+}
+
+.logout {
+  line-height: 40px;
+  color: #71a6d2;
+  text-decoration: none;
 }
 
 #user-account {
@@ -67,6 +75,16 @@ header h1 {
   color: white;
   padding: 0 15px;
 }
+
+.dropdown-icon {
+  background-color: #71a6d2;
+}
+
+.dropdown-list {
+  text-decoration: none;
+  color: black;
+}
+
 /* End Navbar Component */
 
 /* Start Signup Component */
@@ -149,7 +167,7 @@ form h2 {
   justify-content: center;
   align-items: center;
   margin: 0 20px;
-  font-size: 18px;
+  font-size: 25px;
   letter-spacing: 2px;
   cursor: pointer;
 }
@@ -174,7 +192,7 @@ form h2 {
   margin-top: 30px;
 }
 
-.card {
+.cardWrapper {
   border: 3px solid #ffe4e1;
   margin: 30px 40px;
   padding: 30px;
@@ -183,7 +201,7 @@ form h2 {
   width: 20%;
 }
 
-.card img {
+.cardWrapper img {
   width: 275px;
   height: 270px;
   margin: 0 auto 5px auto;
@@ -193,18 +211,19 @@ form h2 {
   border-radius: 10px;
 }
 
-.card-header {
+.card-header-container {
   display: flex;
   justify-content: space-between;
   padding: 5px 0;
 }
 
-.card-header h3 {
+.card-header-container h3 {
   letter-spacing: 2px;
   color: #71a6d2;
+  font-size: 18px;
 }
 
-.card-header p {
+.card-header-container p {
   color: #71a6d2;
 }
 
@@ -259,6 +278,60 @@ form h2 {
   cursor: pointer;
 }
 /* End Exercise Component */
+
+/* Start CartItem Component */
+.card-wrapper {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+} 
+
+.cart-item {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cart-image {
+  width: 300px; 
+  height: 300px;
+  border-radius: 10px;
+}
+
+.cart-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity {
+  color: black;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.quantity-num {
+  width: 50px;
+  padding-left: 8px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.price {
+  font-size: 28px;
+  color: #71a6d2;
+}
+
+.total {
+  font-size: 30px;
+  margin-right: 15px;
+  text-transform: uppercase;
+  color: black;
+}
+/* End CartItem Component */
 
 /* Media Queries */
 @media only screen and (max-width: 1440px) {

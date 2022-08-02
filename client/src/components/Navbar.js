@@ -3,28 +3,30 @@ import React from "react";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 //Styled Component for the Header
 const Header = styled.header`
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 25px 30px;
-background-color: #ffe4e1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  background-color: #ffe4e1;
 `;  
 
 //Styled Component for the NavBar
 const NavbarWrapper = styled.ul`
-display: flex;
-list-style-type: none; 
+  display: flex;
+  list-style-type: none; 
 `;
 
 //Styled Component for the NavBar List
 const NavList = styled.li`
-margin: 0 18px;
-font-size: 20px;
-line-height: 30px;
+  margin: 0 18px;
+  font-size: 20px;
+  line-height: 30px;
 `;
 
 //Navbar Component
@@ -35,8 +37,16 @@ const Navbar = ()  => {
     if (Auth.loggedIn()) {
       return (
         <>
-        <NavList>Order History</NavList>
-        <NavList><a href="/" onClick={() => Auth.logout()}>Logout</a></NavList>
+        <Dropdown>
+          <Dropdown.Toggle id="dropdown-basic" className="dropdown-icon">
+            <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item><Link to="/orders" className="dropdown-list">Order History</Link></Dropdown.Item>
+            <Dropdown.Item><Link to="/favorites" className="dropdown-list">Favorites</Link></Dropdown.Item>
+            <Dropdown.Item className="logout-wrapper"><a href="/" onClick={() => Auth.logout()} className="logout">Logout</a></Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
         </>
       )
     } else {
@@ -56,7 +66,7 @@ const Navbar = ()  => {
 
   return (
     <Header>
-      <Link to="/"><h1>E-Fit</h1></Link>
+      <Link to="/"><h1 className="logo">E-Fit</h1></Link>
       <nav>
         <NavbarWrapper>
           <NavList>
@@ -67,6 +77,9 @@ const Navbar = ()  => {
           </NavList>
           <NavList>
             <Link to='/products' className="links nav-link middle-nav">Products</Link>
+          </NavList>
+          <NavList>
+            <Link to='/carts' className="links nav-link middle-nav"><FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></Link>
           </NavList>
           {showNavBar()}
         </NavbarWrapper>
