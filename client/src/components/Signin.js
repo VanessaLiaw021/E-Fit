@@ -1,23 +1,12 @@
 //Import required packages and files
-import React from 'react';
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
+import { LOGIN } from '../utils/mutations';
+import Auth from '../utils/auth';
 import styled from 'styled-components';
 
-const Signin = () => {
-
-  //Styled Component for Form
-  const SignInForm = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 30%;
-    margin: 150px auto 0 auto; 
-    border: 3px solid #ffe4e1;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    box-shadow: 4px 4px 4px rgba(255, 228, 225, 0.4);
-  `;
+const Signin = (props) => {
 
   //Styled Components for Button
   const Button = styled.button`
@@ -34,20 +23,56 @@ const Signin = () => {
     cursor: pointer;
   `;
 
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error }] = useMutation(LOGIN);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const mutationResponse = await login({
+        variables: { email: formState.email, password: formState.password },
+      });
+      const token = mutationResponse.data.login.token;
+      Auth.login(token);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
   return (
-    <SignInForm>
-      <h2>Sign In</h2>
-      <div className="form-group bottom-form">
-        <label>Email:</label>
-        <input type="text" placeholder="Email"/>
+    <form className="form" onSubmit={handleFormSubmit}>
+      <h2>Login</h2>
+      <div className="form-group">
+        <label htmlFor="email">Email address:</label>
+        <input
+          placeholder="Email"
+          name="email"
+          type="email"
+          id="email"
+          onChange={handleChange}
+        />
       </div>
-      <div className="form-group bottom-form">
-        <label>Password:</label>
-        <input type="password" placeholder="Password"/>
+      <div className="form-group">
+        <label htmlFor="pwd">Password:</label>
+        <input
+          placeholder="******"
+          name="password"
+          type="password"
+          id="pwd"
+          onChange={handleChange}
+        />
       </div>
       <p id="account">Don't have an account? <Link to="/signup" className="direct-signin">Sign Up</Link></p>
-      <Button>Sign In</Button>
-    </SignInForm>
+      <Button type="submit">Sign In</Button>
+    </form>
   );
 };
 

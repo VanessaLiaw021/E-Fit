@@ -1,25 +1,15 @@
 //Import required packages
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import Auth from '../utils/auth';
+import { ADD_USER } from '../utils/mutations';
+import styled from 'styled-components';
 
 //Signup Component
-const Signup = () => {
+const Signup = (props) => {
 
-  //Styled Component for Form
-  const SignUpForm = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    margin: 120px auto 0 auto; 
-    border: 3px solid #ffe4e1;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    box-shadow: 4px 4px 4px rgba(255, 228, 225, 0.4);
-  `;
-
+  //Styled component for button
   const Button = styled.button`
     background-color: #71a6d2;
     border: none;
@@ -34,28 +24,74 @@ const Signup = () => {
     cursor: pointer;
   `;
 
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [addUser] = useMutation(ADD_USER);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const mutationResponse = await addUser({
+      variables: {
+        email: formState.email,
+        password: formState.password,
+        firstName: formState.firstName,
+        lastName: formState.lastName,
+      },
+    });
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({...formState, [name]: value});
+  };
+
   return (
-    <SignUpForm className="form">
-      <h2>Sign Up</h2>
+    <form className="form" onSubmit={handleFormSubmit}>
+      <h2>Signup</h2>
       <div className="form-group">
-        <label>First Name:</label>
-        <input type="text" placeholder="First Name" />
+        <label htmlFor="firstName">First Name:</label>
+        <input
+          placeholder="First Name"
+          name="firstName"
+          type="firstName"
+          id="firstName"
+          onChange={handleChange}
+        />
       </div>
       <div className="form-group">
-        <label>Last Name:</label>
-        <input type="text" placeholder="Last Name" />  
+        <label htmlFor="lastName">Last Name:</label>
+        <input
+          placeholder="Last"
+          name="lastName"
+          type="lastName"
+          id="lastName"
+          onChange={handleChange}
+        />
       </div>
-      <div className="form-group bottom-form">
-        <label>Email:</label>
-        <input type="text" placeholder="Email"/>
+      <div className="form-group">
+        <label htmlFor="email">Email:</label>
+        <input
+          placeholder="Email"
+          name="email"
+          type="email"
+          id="email"
+          onChange={handleChange}
+        />
       </div>
-      <div className="form-group bottom-form">
-        <label>Password:</label>
-        <input type="password" placeholder="Password"/>
+      <div className="form-group">
+        <label htmlFor="pwd">Password:</label>
+        <input
+          placeholder="******"
+          name="password"
+          type="password"
+          id="pwd"
+          onChange={handleChange}
+        />
       </div>
       <p id="account">Have an account? <Link to="/signin" className="direct-signin">Sign In</Link></p>
-      <Button>Sign Up</Button>
-    </SignUpForm>
+      <Button type="submit">Sign Up</Button>
+    </form>
   );
 };
 

@@ -1,4 +1,3 @@
-//Import required packages 
 import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { useStoreContext } from '../utils/GlobalState';
@@ -12,31 +11,28 @@ import { idbPromise } from '../utils/helpers';
 const Category = () => {
   const [state, dispatch] = useStoreContext();
 
- // const { categories } = state;
+  const { categories } = state;
 
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
-  const categories = categoryData?.categories || [];
-
-  // useEffect(() => {
-  //   if (categoryData) {
-  //     dispatch({
-  //       type: UPDATE_CATEGORIES,
-  //       categories: categoryData.categories,
-  //     });
-  //     categoryData.categories.forEach((category) => {
-  //       idbPromise('categories', 'put', category);
-  //     });
-  //   } else if (!loading) {
-  //     idbPromise('categories', 'get').then((categories) => {
-  //       dispatch({
-  //         type: UPDATE_CATEGORIES,
-  //         categories: categories,
-  //       });
-  //     });
-  //   }
-
-  // }, [categoryData, loading, dispatch]);
+  useEffect(() => {
+    if (categoryData) {
+      dispatch({
+        type: UPDATE_CATEGORIES,
+        categories: categoryData.categories,
+      });
+      categoryData.categories.forEach((category) => {
+        idbPromise('categories', 'put', category);
+      });
+    } else if (!loading) {
+      idbPromise('categories', 'get').then((categories) => {
+        dispatch({
+          type: UPDATE_CATEGORIES,
+          categories: categories,
+        });
+      });
+    }
+  }, [categoryData, loading, dispatch]);
 
   const handleClick = (id) => {
     dispatch({
@@ -46,16 +42,16 @@ const Category = () => {
   };
 
   return (
-    <div>
-      <div className="category">
-        <ul>
-          {categories.map(item => {
-            return (
-              <li key={item.id} onClick={() => { handleClick(item._id)}}></li>
-            )
-          })}
-        </ul>
-      </div>
+    <div className="category">
+      <ul>
+        {categories.map((item) => (
+          <button key={item._id}
+            onClick={() => {
+              handleClick(item._id);
+            }}
+          >{item.name}</button>
+        ))}
+      </ul>
     </div>
   );
 };

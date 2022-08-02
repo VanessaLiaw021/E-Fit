@@ -69,7 +69,20 @@ header h1 {
 }
 /* End Navbar Component */
 
-/* Start Sigup Component */
+/* Start Signup Component */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin: 120px auto 0 auto; 
+  border: 3px solid #ffe4e1;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 4px 4px 4px rgba(255, 228, 225, 0.4);
+}
+
 form h2 {
   text-align: center;
   margin-top: 20px;
@@ -92,6 +105,7 @@ form h2 {
   padding-left: 10px;
   border-radius: 10px;
   border: 1px solid black;
+  font-size: 16px;
 }
 
 #account {
@@ -103,7 +117,7 @@ form h2 {
 }
 /* End Signup Component */
 
-/* Start ProductList Component */
+/* Start Category Component */
 .main {
   margin: 90px 100px 40px 100px;
 }
@@ -115,6 +129,10 @@ form h2 {
   padding: 30px;
   letter-spacing: 3px;
   text-transform: uppercase;
+}
+
+.category button {
+  all: unset;
 }
 
 .category ul {
@@ -135,7 +153,7 @@ form h2 {
   letter-spacing: 2px;
   cursor: pointer;
 }
-/* End ProductList Component */
+/* End Category Component */
 
 /* Start Product Item Component */
 .product-card {
@@ -152,9 +170,10 @@ form h2 {
   padding: 30px;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  width: 20%;
 }
 
-.image img {
+.card img {
   width: 350px;
   height: 350px;
 }
@@ -176,6 +195,21 @@ form h2 {
 
 .add-cart:hover {
   transform: scale(1.1);
+}
+
+.card-bottom {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.card-bottom p {
+  font-size: 14px; 
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+.card-bottom p span {
+  color: #71a6d2;
 }
 /* End Product Item Component */
 
