@@ -60,11 +60,11 @@ function ProductItem(item) {
   }
   console.log(size, "Sizes");
   return (
-    <div className="card">
+    <div className="cardWrapper">
       <Link to={`/products/${_id}`}>
         <img alt={name} src={`/images/${image}`}/>
       </Link>
-      <div className="card-header">
+      <div className="card-header-container">
         <h3>{name}</h3>
         <p>${price}</p>
       </div>

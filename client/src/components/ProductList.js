@@ -6,6 +6,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import Category from "./Category";
+import Footer from "./Footer";
 
 const ProductList = () => {
   const [state, dispatch] = useStoreContext();
@@ -67,6 +68,7 @@ const ProductList = () => {
           <h3>You haven't added any products yet!</h3>
         )}
       </div>
+      <Footer />
     </>
   );
 }

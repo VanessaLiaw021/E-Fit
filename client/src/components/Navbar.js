@@ -70,7 +70,7 @@ const Navbar = ()  => {
 
   return (
     <Header>
-      <Link to="/"><h1>E-Fit</h1></Link>
+      <Link to="/"><h1 className="logo">E-Fit</h1></Link>
       <nav>
         <NavbarWrapper>
           <NavList>

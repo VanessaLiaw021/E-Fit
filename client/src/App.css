@@ -44,11 +44,13 @@
 /* Start Navbar Component */
 header h1 {
   color: black;
+  text-decoration: none;
 }
 
 .links {
   color: black;
   letter-spacing: 3px;
+  text-decoration: none;
 }
 
 .nav-link {
@@ -154,7 +156,7 @@ form h2 {
   justify-content: center;
   align-items: center;
   margin: 0 20px;
-  font-size: 18px;
+  font-size: 25px;
   letter-spacing: 2px;
   cursor: pointer;
 }
@@ -179,7 +181,7 @@ form h2 {
   margin-top: 30px;
 }
 
-.card {
+.cardWrapper {
   border: 3px solid #ffe4e1;
   margin: 30px 40px;
   padding: 30px;
@@ -188,7 +190,7 @@ form h2 {
   width: 20%;
 }
 
-.card img {
+.cardWrapper img {
   width: 275px;
   height: 270px;
   margin: 0 auto 5px auto;
@@ -198,18 +200,19 @@ form h2 {
   border-radius: 10px;
 }
 
-.card-header {
+.card-header-container {
   display: flex;
   justify-content: space-between;
   padding: 5px 0;
 }
 
-.card-header h3 {
+.card-header-container h3 {
   letter-spacing: 2px;
   color: #71a6d2;
+  font-size: 18px;
 }
 
-.card-header p {
+.card-header-container p {
   color: #71a6d2;
 }
 

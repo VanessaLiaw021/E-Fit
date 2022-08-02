@@ -69,7 +69,7 @@ db.once('open', async () => {
     },
     {
       name: 'Tanktop',
-      category: categories[0]._id || categories[1]._id,
+      category: categories[1]._id,
       description:
         'this Tanktop is a staple for a summer workout.',
       image: 'womens-tanktop.webp',
