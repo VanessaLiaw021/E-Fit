@@ -279,6 +279,48 @@ form h2 {
 }
 /* End Exercise Component */
 
+/* Start CartItem Component */
+.card-wrapper {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+} 
+
+.cart-item {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cart-image {
+  width: 300px; 
+  height: 300px;
+  border-radius: 10px;
+}
+
+.cart-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity {
+  color: black;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.quantity-num {
+  width: 50px;
+  padding-left: 8px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+/* End CartItem Component */
+
 /* Media Queries */
 @media only screen and (max-width: 1440px) {
 
