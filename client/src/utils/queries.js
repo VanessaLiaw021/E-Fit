@@ -47,6 +47,7 @@ export const QUERY_ALL_EXERCISES = gql`
       _id
       name
       description
+      image
     }
   }
 `;
