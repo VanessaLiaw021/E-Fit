@@ -46,9 +46,7 @@ const Category = () => {
       <ul>
         {categories.map((item) => (
           <button key={item._id}
-            onClick={() => {
-              handleClick(item.name, item._id);
-            }}
+            onClick={() => { handleClick(item.name, item._id)}}
           >{item.name}</button>
         ))}
       </ul>

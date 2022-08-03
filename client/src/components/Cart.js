@@ -8,7 +8,6 @@ import CartItem from './CartItem';
 import Auth from '../utils/auth';
 import { useStoreContext } from '../utils/GlobalState';
 import { ADD_MULTIPLE_TO_CART } from '../utils/actions';
-import Footer from './Footer';
 import styled from 'styled-components';
 
 //Load Strip
@@ -83,7 +82,7 @@ const Cart = ({ item }) => {
       <h2 className="headings">Your Cart</h2>
       <div className="cart-item">
         {state.cart.map(item => (
-          <CartItem key={item.id} item={item}/>
+          <CartItem key={item._id} item={item}/>
         ))}
       </div>
       <hr></hr>
@@ -94,7 +93,6 @@ const Cart = ({ item }) => {
         <span>(log in to check out)</span>
       )}
     </div>
-    <Footer />
     </>
   );
 };

@@ -1,15 +1,17 @@
 //Import required packages and files
 import './App.css';
-import Navbar from "./components/Navbar";
+import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from "./components/Home";
+import Home from './components/Home';
 import Exercises from "./components/Exercises";
 import ProductList from "./components/ProductList";
-import Cart from "./components/Cart";
+import Cart from './components/Cart';
 import Favorites from './components/Favorites';
-import OrderHistory from './components/OrderHistory';
-import Signin from "./components/Signin";
-import Signup from "./components/Signup";
+import OrderHistory from './pages/OrderHistory';
+import SingleProduct from './pages/SingleProduct';
+import Success from './pages/Success';
+import Signin from './components/Signin';
+import Signup from './components/Signup';
 import {
   ApolloClient,
   InMemoryCache,
@@ -50,9 +52,11 @@ function App() {
           <Route path="/" element={<Home />}/>
           <Route path="/exercises" element={<Exercises />}/>
           <Route path="/products" element={<ProductList />}/>
+          <Route path="/products/:id" element={<SingleProduct />}/>
           <Route path="/carts" element={<Cart />}/>
           <Route path="/favorites" element={<Favorites />}/>
           <Route path="/orders" element={<OrderHistory />}/>
+          <Route path="/success" element={<Success />}/>
           <Route path="/signin" element={<Signin />}/>
           <Route path="/signup" element={<Signup />}/>
         </Routes>
