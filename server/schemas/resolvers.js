@@ -2,11 +2,8 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Product, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
-<<<<<<< HEAD
-=======
 const axios = require('axios').default;
-// const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
->>>>>>> main
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const client = axios.create({
   baseURL: 'https://wger.de/api/v2/'
