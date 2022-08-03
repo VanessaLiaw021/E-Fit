@@ -8,7 +8,6 @@ import CartItem from './CartItem';
 import Auth from '../utils/auth';
 import { useStoreContext } from '../utils/GlobalState';
 import { ADD_MULTIPLE_TO_CART } from '../utils/actions';
-import Footer from './Footer';
 import styled from 'styled-components';
 
 //Load Strip
@@ -94,7 +93,6 @@ const Cart = ({ item }) => {
         <span>(log in to check out)</span>
       )}
     </div>
-    <Footer />
     </>
   );
 };

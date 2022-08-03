@@ -7,7 +7,8 @@ import Exercises from "./components/Exercises";
 import ProductList from "./components/ProductList";
 import Cart from './components/Cart';
 import Favorites from './components/Favorites';
-import OrderHistory from './components/OrderHistory';
+import OrderHistory from './pages/OrderHistory';
+import SingleProduct from './pages/SingleProduct';
 import Success from './pages/Success';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
@@ -51,6 +52,7 @@ function App() {
           <Route path="/" element={<Home />}/>
           <Route path="/exercises" element={<Exercises />}/>
           <Route path="/products" element={<ProductList />}/>
+          <Route path="/products/:id" element={<SingleProduct />}/>
           <Route path="/carts" element={<Cart />}/>
           <Route path="/favorites" element={<Favorites />}/>
           <Route path="/orders" element={<OrderHistory />}/>

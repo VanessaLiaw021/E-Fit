@@ -82,7 +82,7 @@ function ProductItem(item) {
         <img alt={name} src={`/images/${image}`}/>
       </Link>
       <div className="card-header-container">
-        <h3>{name}</h3>
+        <Link to={`/products/${_id}`}><h3>{name}</h3></Link>
         <p>${price}</p>
       </div>
       <div className="size">

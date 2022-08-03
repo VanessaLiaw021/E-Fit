@@ -221,6 +221,7 @@ form h2 {
   letter-spacing: 2px;
   color: #71a6d2;
   font-size: 18px;
+  text-decoration: none;
 }
 
 .card-header-container p {
@@ -348,6 +349,48 @@ form h2 {
   color: black;
 }
 /* End CartItem Component */
+
+/* Start Single Product Page */
+.single {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single img {
+  border-radius: 10px;
+}
+
+.single-content {
+  margin: 0 50px;
+}
+
+.single-content h2 {
+  color: #71a6d2;
+  font-size: 40px;
+}
+
+.go-back {
+  text-decoration: none;
+  color: white;
+}
+
+.go-back:hover {
+  color: white;
+}
+
+.single-price {
+  font-size: 20px;
+}
+
+.description {
+  font-size: 18px;
+}
+
+.single-price span {
+  color: #71a6d2;
+}
+/* End Single Product Page */
 
 /* Media Queries */
 @media only screen and (max-width: 1440px) {
