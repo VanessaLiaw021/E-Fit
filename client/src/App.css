@@ -411,6 +411,10 @@ form h2 {
   color: #71a6d2;
 }
 
+.order-detail span {
+  font-size: 18px;
+}
+
 .order-content {
   display: flex;
   justify-content: space-evenly;

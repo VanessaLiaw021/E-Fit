@@ -7,11 +7,13 @@ import { QUERY_USER } from '../utils/queries';
 //Order History Component
 const OrderHistory = () => {
 
+  //Query the user data based on their logged information
   const { data } = useQuery(QUERY_USER);
   let user;
 
   if (data) { user = data.user}
 
+  //Return the page for order history
   return (
     <>
       <div className="main">
@@ -22,7 +24,7 @@ const OrderHistory = () => {
             {user.orders.map((order) => (
               <div key={order._id}>
                 <div className="order-detail">
-                  <h2>Order for {user.firstName} {user.lastName}</h2>
+                  <h2>Order for {user.firstName}</h2>
                   <h2 className="date">{new Date(parseInt(order.purchaseDate)).toLocaleDateString()}</h2>
                 </div>
                 <div className="order-content">
