@@ -30,8 +30,8 @@ const Home = () => {
       <p>Click below to view exercising ideas or view our products</p>
 
       <div className="buttons">
-        <Link to="/exercises"><Button>View Exercises</Button></Link>
-        <Link to="/products"><Button>View Products</Button></Link>
+        <Link to="/exercises" className="view-button"><Button>View Exercises</Button></Link>
+        <Link to="/products" className="view-button"><Button>View Products</Button></Link>
       </div>
     </div>
     <Footer />

@@ -123,11 +123,13 @@ const SingleProduct = () => {
             <p className="description">{currentProduct.description}</p>
             <p className="single-price">Price: <span>${currentProduct.price}{' '}</span></p>
             <br></br>
-            <Button onClick={addToCart}>Add to Cart</Button>
-            <Button
-              disabled={!cart.find((p) => p._id === currentProduct._id)}
-              onClick={removeFromCart}
-            >Remove from Cart</Button>
+            <div className="button-group">
+              <Button onClick={addToCart}>Add to Cart</Button>
+              <Button
+                disabled={!cart.find((p) => p._id === currentProduct._id)}
+                onClick={removeFromCart}
+              >Remove from Cart</Button>
+            </div>
           </div>
         </div>
       ) : null}

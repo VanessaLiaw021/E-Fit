@@ -82,7 +82,7 @@ const Cart = ({ item }) => {
       <h2 className="headings">Your Cart</h2>
       <div className="cart-item">
         {state.cart.map(item => (
-          <CartItem key={item.id} item={item}/>
+          <CartItem key={item._id} item={item}/>
         ))}
       </div>
       <hr></hr>
