@@ -82,22 +82,29 @@ const Favorites = ({ item }) => {
     <>
     <div className="main">
       <h2 className="headings">Favorites</h2>
-      <div className="favorite-item">
-        {state.favorite.map(item => (
-          <FavoriteItem key={item.id} item={item}/>
-        ))}
-      </div>
-      <hr></hr>
+        {state.favorite.length ? (
+          <>
+           <div className="favorite-item">
+            {state.cart.map(item => (
+              <FavoriteItem key={item._id} item={item}/>
+            ))}
+          </div>
+          <hr></hr>
       <p className="text-center price"><span className="total">Total:</span>${calculateTotal()}</p>
       {Auth.loggedIn() ? (
         <Button onClick={submitCheckout}>Checkout</Button>
       ) : (
         <span>(log in to check out)</span>
       )}
-    </div>
     </>
+  ): (
+    <h3 className="text-center mt-5">You have no item added to you cart!</h3>
+  )}
+  </div>
+  </>
   );
 };
+
 
 //Export Cart Component
 export default Favorites;
