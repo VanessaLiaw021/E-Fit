@@ -87,7 +87,7 @@ const CartItem = ({ item }) => {
               className="quantity-num"
           />
         </CardContainer>
-        <Button conClick={() => removeFromCart(item)}>Remove From Cart</Button>
+        <Button onClick={() => removeFromCart(item)}>Remove From Cart</Button>
       </div>
     </Card>
   );

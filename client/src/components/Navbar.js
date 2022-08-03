@@ -37,28 +37,31 @@ const Navbar = ()  => {
     if (Auth.loggedIn()) {
       return (
         <>
-        <Dropdown>
-          <Dropdown.Toggle id="dropdown-basic" className="dropdown-icon">
-            <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item><Link to="/orders" className="dropdown-list">Order History</Link></Dropdown.Item>
-            <Dropdown.Item><Link to="/favorites" className="dropdown-list">Favorites</Link></Dropdown.Item>
-            <Dropdown.Item className="logout-wrapper"><a href="/" onClick={() => Auth.logout()} className="logout">Logout</a></Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+          <Dropdown>
+            <Dropdown.Toggle id="dropdown-basic" className="dropdown-icon">
+              <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item><Link to="/orders" className="dropdown-list">Order History</Link></Dropdown.Item>
+              <Dropdown.Item><Link to="/favorites" className="dropdown-list">Favorites</Link></Dropdown.Item>
+              <Dropdown.Item className="logout-wrapper"><a href="/" onClick={() => Auth.logout()} className="logout">Logout</a></Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </>
       )
     } else {
 
       return (
         <>
-          <NavList>
-            <Link to='/signin' className="links nav-link">Sign In</Link>
-          </NavList>
-          <NavList id="user-account">
-            <Link to='/signup' className="links">Sign Up</Link>
-          </NavList>
+          <Dropdown>
+            <Dropdown.Toggle id="dropdown-basic" className="dropdown-icon">
+              <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item><Link to="/signin" className="dropdown-list">Sign In</Link></Dropdown.Item>
+              <Dropdown.Item><Link to="/signup" className="dropdown-list">Sign Up</Link></Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </>
       )
     }
