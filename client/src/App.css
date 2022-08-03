@@ -467,6 +467,13 @@ form h2 {
 /* End Order History Page */
 
 /* Start Favorite Component */
+.favorite-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .favorite-image {
   width: 300px;
   height: 300px;

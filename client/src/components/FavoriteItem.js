@@ -71,7 +71,7 @@ const FavoriteItem = ({ item }) => {
           <p>{item.name}</p>
           <p className="fav-price">${item.price}</p>
         </div>
-        <Button conClick={() => removeFromFavorite(item)}>Remove From Favorite</Button>
+        <Button onClick={() => removeFromFavorite(item)}>Remove From Favorite</Button>
       </div>
     </Card>
   );
