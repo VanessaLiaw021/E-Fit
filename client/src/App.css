@@ -400,6 +400,56 @@ form h2 {
 }
 /* End Single Product Page */
 
+/* Start Order History Page */
+.order-detail {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.order-detail .date {
+  color: #71a6d2;
+}
+
+.order-content {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 70px;
+}
+
+.order-card {
+  border: 2px solid #ffe4e1;
+  padding: 30px 30px 0 30px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.order-card img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.order-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.order-wrapper p {
+  color: #71a6d2;
+  font-size: 20px;
+}
+
+.order-wrapper span {
+  font-size: 18px;
+  color: #71a6d2;
+}
+
+.line {
+  text-decoration: none;
+}
+/* End Order Histoty Page */
+
 /* Media Queries */
 @media only screen and (max-width: 1440px) {
 

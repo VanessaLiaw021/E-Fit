@@ -19,27 +19,26 @@ const OrderHistory = () => {
 
         {user ? (
           <>
-            <h2>
-              Order History for {user.firstName} {user.lastName}
-            </h2>
             {user.orders.map((order) => (
-              <div key={order._id} className="my-2">
-                <h3>
-                  {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
-                </h3>
-                <div className="flex-row">
+              <div key={order._id}>
+                <div className="order-detail">
+                  <h2>Order for {user.firstName} {user.lastName}</h2>
+                  <h2 className="date">{new Date(parseInt(order.purchaseDate)).toLocaleDateString()}</h2>
+                </div>
+                <div className="order-content">
                   {order.products.map(({ _id, image, name, price }, index) => (
-                    <div key={index} className="card px-1 py-1">
+                    <div key={index} className="order-card">
                       <Link to={`/products/${_id}`}>
-                        <img alt={name} src={`/images/${image}`} />
-                        <p>{name}</p>
+                        <img alt={name} src={`/images/${image}`} className="image"/>
                       </Link>
-                      <div>
+                      <div className="order-wrapper">
+                        <Link to={`/products/${_id}`} className="line"><p>{name}</p></Link>
                         <span>${price}</span>
                       </div>
                     </div>
                   ))}
                 </div>
+                <hr></hr>
               </div>
             ))}
           </>
