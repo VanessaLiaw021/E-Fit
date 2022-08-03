@@ -96,11 +96,11 @@ const resolvers = {
     },
 
     exercises: async () => {
-      const response = await client.get('exercise/', {params: { language: 2, limit: 50}})
+      const response = await client.get('exercise/', { params: { language: 2, limit: 50 } })
       const imageResponse = await client.get('exerciseimage/', { params: { is_main: true, limit: 1000 } });
-      const exercises = response.data.results.map((result)=>{
-        const matched = imageResponse.data.results.filter(ir=>ir.exercise_base===result.exercise_base)[0];
-        return {...result,image: matched?.image || null};
+      const exercises = response.data.results.map((result) => {
+        const matched = imageResponse.data.results.filter(ir => ir.exercise_base === result.exercise_base)[0];
+        return { ...result, image: matched?.image || null };
       })
       return exercises.map(e => ({ name: e.name, description: e.description, _id: e.id, image: e.image }));
     },
@@ -135,6 +135,28 @@ const resolvers = {
       const decrement = Math.abs(quantity) * -1;
 
       return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+    },
+    saveProduct: async (parent, { productData }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { savedProducts: productData } },
+          { new: true, runValidators: true }
+        );
+        return updatedUser;
+      };
+      throw new AuthenticationError("You need to be logged in to saved Products!");
+    },
+    removeProduct: async (parent, { productData }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { removedProducts: {productId: productId} } },
+          { new: true, runValidators: true }
+        );
+        return updatedUser;
+      };
+      throw new AuthenticationError("You need to be logged in to saved Products!");
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });

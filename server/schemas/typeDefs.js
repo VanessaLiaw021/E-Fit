@@ -19,6 +19,14 @@ const typeDefs = gql`
     size: [String]
   }
 
+  input ProductInput {
+    _id: ID
+    name: String
+    image: String
+    price: Float
+    size: [String]
+  }
+
   type Exercise {
     _id: ID
     name: String

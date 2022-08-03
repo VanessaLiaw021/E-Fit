@@ -50,3 +50,41 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const SAVE_PRODUCT = gql`
+  mutation saveProduct($productData: ProductInput!) {
+    saveProduct: (productData: $productData) {
+      _id 
+      email
+      name
+      image
+      price
+      savedProducts{
+        _id
+        name
+        image
+        prices
+        size
+      }
+    }
+  }
+`;
+
+export const REMOVE_BOOK = gql`
+  mutation removeProduct($productId: String!) {
+    removeProduct: (productId: $productId) {
+      _id 
+      email
+      name
+      image
+      price
+      savedProducts{
+        _id
+        name
+        image
+        prices
+        size
+      }
+    }
+  }
+`;
