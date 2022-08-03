@@ -67,10 +67,10 @@ const CartItem = ({ item }) => {
     <Card>
       <div className="card-wrapper">
         <img src={`/images/${item.image}`} alt={item.name} className="cart-image"/>
-        <CardContainer>
+        <div className="cart-name-price">
           <p>{item.name}</p>
-          <p>${item.price}</p>
-        </CardContainer>
+          <p className="cart-price">${item.price}</p>
+        </div>
         <CardContainer>
           <span className="quantity">Qty:</span>
           <input
