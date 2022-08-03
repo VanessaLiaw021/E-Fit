@@ -1,10 +1,12 @@
 //Import required packages
 import React, { useEffect } from 'react';
 import { useStoreContext } from '../utils/GlobalState';
-import { QUERY_ALL_EXERCISES} from '../utils/queries';
+import { QUERY_ALL_EXERCISES,  } from '../utils/queries';
+// QUERY_EXERCISE_IMAGE
 import { useQuery } from '@apollo/client';
 import {
   UPDATE_EXERCISES,
+  // UPDATE_EXERCISE_IMAGE
 } from '../utils/actions';
 import { idbPromise } from '../utils/helpers';
 
@@ -13,7 +15,7 @@ const Exercises = () => {
   const [state, dispatch] = useStoreContext();
 
   const { exercises } = state;
-
+  // , QUERY_EXERCISE_IMAGE
   const { loading, data: exerciseData } = useQuery(QUERY_ALL_EXERCISES);
 
   useEffect(() => {
@@ -46,8 +48,10 @@ const Exercises = () => {
 
       <ul>
         {exercises.map((item) => (
-          <li key={item._id}>{item.name}</li>
+          // {item.image}
+        <li key={item._id}>{item.name}{item.description}</li>
         ))}
+        {}
       </ul>
     </div>
   );

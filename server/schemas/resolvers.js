@@ -96,10 +96,16 @@ const resolvers = {
     },
 
     exercises: async () => {
-      const response = await client.get('exercise/', {params: {language: 2}})
-      return response.data.results.map(e => ({ name: e.name, description: e.description, _id: e.id }));
+      const response = await client.get('exercise/', {params: { language: 2, limit: 50}})
+      const imageResponse = await client.get('exerciseimage/', { params: { is_main: true, limit: 1000 } });
+      const exercises = response.data.results.map((result)=>{
+        const matched = imageResponse.data.results.filter(ir=>ir.exercise_base===result.exercise_base)[0];
+        console.log(matched)
+        return {...result,image: matched?.image || null};
+      })
+      console.log(exercises);
+      return exercises.map(e => ({ name: e.name, description: e.description, _id: e.id, image: e.image }));
     },
-
   },
   Mutation: {
     addUser: async (parent, args) => {
