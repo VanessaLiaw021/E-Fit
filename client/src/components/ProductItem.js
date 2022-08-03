@@ -38,8 +38,9 @@ function ProductItem(item) {
     quantity
   } = item;
   console.log(item, "items");
-  const { cart } = state
+  const { cart, favorite } = state
 
+  //Function that add to cart page
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === _id)
     if (itemInCart) {
@@ -59,22 +60,24 @@ function ProductItem(item) {
       });
       idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
     }
-  }
-  // const addToFavorite = () => {
-  //   const itemInFavorite = cart.find((favoriteItem) => favoriteItem._id === _id)
-  //   if (itemInFavorite) {
-  //     idbPromise('favorite', 'put', {
-  //       ...itemInFavorite,
-   
-  //     });
-  //   } else {
-  //     dispatch({
-  //       type: ADD_TO_FAVORITE,
-  //       product: { ...item }
-  //     });
-  //     idbPromise('favorite', 'put', { ...item });
-  //   }
-  // }
+  };
+
+  //Function that add to favorites page
+  const addToFavorite = () => {
+    const itemInFavorite = favorite.find((favoriteItem) => favoriteItem._id === _id)
+    if (itemInFavorite) {
+      idbPromise('favorite', 'put', {
+        ...itemInFavorite,
+      });
+    } else {
+      dispatch({
+        type: ADD_TO_FAVORITE,
+        product: { ...item }
+      });
+      idbPromise('favorite', 'put', { ...item });
+    }
+  };
+
   console.log(size, "Sizes");
   return (
     <div className="cardWrapper">
@@ -89,7 +92,7 @@ function ProductItem(item) {
       </div>
       <div className="card-bottom">
         <Button onClick={addToCart} className="add-cart">Add to cart</Button>
-        <button className="heart-icon"><FontAwesomeIcon icon={faHeart} className="heart"/></button>
+        <button className="heart-icon" onClick={addToFavorite}><FontAwesomeIcon icon={faHeart} className="heart"/></button>
         <p><span>{quantity}</span> {pluralize("item", quantity)} in stock</p>
       </div>
     </div>

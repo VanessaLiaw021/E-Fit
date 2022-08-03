@@ -28,24 +28,24 @@ export const reducer = (state, action) => {
       return {
         ...state,
         cartOpen: true,
-          cart: [...state.cart, action.product],
+        cart: [...state.cart, action.product],
       };
     case ADD_TO_FAVORITE:
       return {
         ...state,
-        cartOpen: true,
-          cart: [...state.cart, action.product],
-      };
+        favorite: [...state.favorite, action.product],
+    };
 
     case ADD_MULTIPLE_TO_CART:
       return {
         ...state,
         cart: [...state.cart, ...action.products],
-      };
-      case ADD_MULTIPLE_TO_FAVORITES:
+    };
+
+    case ADD_MULTIPLE_TO_FAVORITES:
       return {
         ...state,
-        cart: [...state.cart, ...action.products],
+        favorite: [...state.favorite, ...action.products],
       };
 
     case UPDATE_CART_QUANTITY:
@@ -82,12 +82,6 @@ export const reducer = (state, action) => {
       return {
         ...state,
         exercises: [...action.exercises],
-      };
-
-    case TOGGLE_CART:
-      return {
-        ...state,
-        cartOpen: !state.cartOpen
       };
 
     case UPDATE_CATEGORIES:

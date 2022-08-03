@@ -67,26 +67,10 @@ const FavoriteItem = ({ item }) => {
     <Card>
       <div className="card-wrapper">
         <img src={`/images/${item.image}`} alt={item.name} className="favorite-image"/>
-        <CardContainer>
+        <div className="fav-wrapper">
           <p>{item.name}</p>
-          <p>${item.price}</p>
-        </CardContainer>
-        <CardContainer>
-          <span className="quantity">Qty:</span>
-          <input
-              type="number"
-              placeholder="1"
-              className="quantity-num"
-              value={item.purchaseQuantity}
-              onChange={onChange}
-          />
-          <span className="quantity">Size:</span>
-          <input
-              type="number"
-              placeholder="1"
-              className="quantity-num"
-          />
-        </CardContainer>
+          <p className="fav-price">${item.price}</p>
+        </div>
         <Button conClick={() => removeFromFavorite(item)}>Remove From Favorite</Button>
       </div>
     </Card>
