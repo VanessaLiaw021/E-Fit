@@ -41,6 +41,16 @@ export const QUERY_ALL_PRODUCTS = gql`
   }
 `;
 
+export const QUERY_ALL_EXERCISES = gql`
+  {
+    exercises {
+      _id
+      name
+      description
+    }
+  }
+`;
+
 export const QUERY_CATEGORIES = gql`
   {
     categories {

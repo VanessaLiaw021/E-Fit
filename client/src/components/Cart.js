@@ -8,7 +8,6 @@ import CartItem from './CartItem';
 import Auth from '../utils/auth';
 import { useStoreContext } from '../utils/GlobalState';
 import { ADD_MULTIPLE_TO_CART } from '../utils/actions';
-import Footer from './Footer';
 import styled from 'styled-components';
 
 //Load Strip
@@ -81,20 +80,25 @@ const Cart = ({ item }) => {
     <>
     <div className="main">
       <h2 className="headings">Your Cart</h2>
-      <div className="cart-item">
-        {state.cart.map(item => (
-          <CartItem key={item.id} item={item}/>
-        ))}
-      </div>
-      <hr></hr>
-      <p className="text-center price"><span className="total">Total:</span>${calculateTotal()}</p>
-      {Auth.loggedIn() ? (
-        <Button onClick={submitCheckout}>Checkout</Button>
+      {state.cart.length ? (
+        <>
+          <div className="cart-item">
+            {state.cart.map(item => (
+              <CartItem key={item._id} item={item}/>
+            ))}
+          </div>
+          <hr></hr>
+          <p className="text-center price"><span className="total">Total:</span>${calculateTotal()}</p>
+          {Auth.loggedIn() ? (
+            <Button onClick={submitCheckout}>Checkout</Button>
+          ) : (
+            <span>(log in to check out)</span>
+          )}
+        </>
       ) : (
-        <span>(log in to check out)</span>
+        <h3 className="text-center mt-5">You have no item added to you cart!</h3>
       )}
     </div>
-    <Footer />
     </>
   );
 };

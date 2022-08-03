@@ -8,8 +8,8 @@ import FavoriteItem from './FavoriteItem';
 import Auth from '../utils/auth';
 import { useStoreContext } from '../utils/GlobalState';
 import { ADD_MULTIPLE_TO_FAVORITES } from '../utils/actions';
-import Footer from './Footer';
 import styled from 'styled-components';
+
 
 //Load Strip
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
@@ -55,26 +55,17 @@ const Favorites = ({ item }) => {
     }
   }, [state.favorite.length, dispatch]);
 
-  // useEffect(() => {
-  //   async function getFavorite() {
-  //     const favorite = await idbPromise('favorite', 'get');
-  //     dispatch({ type: ADD_MULTIPLE_TO_FAVORITES, products: [...cart] });
-  //   }
-
-  //   if (!state.favorite.length) {
-  //     getFavorite();
-  //   }
-  // }, [state.favorite.length, dispatch]);
 
   function calculateTotal() {
     let sum = 0;
-    state.cart.forEach((item) => {
+    state.favorite.forEach((item) => {
       sum += item.price * item.purchaseQuantity;
     });
     return sum.toFixed(2);
   }
 
-  function submitCheckout() {
+  
+    function submitCheckout() {
     const productIds = [];
 
     state.favorite.forEach((item) => {
@@ -82,7 +73,6 @@ const Favorites = ({ item }) => {
         productIds.push(item._id);
       }
     });
-
     getCheckout({
       variables: { products: productIds },
     });
@@ -92,7 +82,7 @@ const Favorites = ({ item }) => {
     <>
     <div className="main">
       <h2 className="headings">Favorites</h2>
-      <div className="cart-item">
+      <div className="favorite-item">
         {state.favorite.map(item => (
           <FavoriteItem key={item.id} item={item}/>
         ))}
@@ -105,7 +95,6 @@ const Favorites = ({ item }) => {
         <span>(log in to check out)</span>
       )}
     </div>
-    <Footer />
     </>
   );
 };

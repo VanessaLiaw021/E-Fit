@@ -1,7 +1,13 @@
+//Import required packages
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Product, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
-// const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const axios = require('axios').default;
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+
+const client = axios.create({
+  baseURL: 'https://wger.de/api/v2/'
+})
 
 const resolvers = {
   Query: {
@@ -87,7 +93,13 @@ const resolvers = {
       });
 
       return { session: session.id };
-    }
+    },
+
+    exercises: async () => {
+      const response = await client.get('exercise/', {params: {language: 2}})
+      return response.data.results.map(e => ({ name: e.name, description: e.description, _id: e.id }));
+    },
+
   },
   Mutation: {
     addUser: async (parent, args) => {
