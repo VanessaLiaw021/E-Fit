@@ -14,6 +14,8 @@ const SuccessMessage = styled.div`
 
 //Success Component
 const Success = () => {
+
+  //Add the order to cart
   const [addOrder] = useMutation(ADD_ORDER);
 
   useEffect(() => {
@@ -24,10 +26,7 @@ const Success = () => {
       if (products.length) {
         const { data } = await addOrder({ variables: { products } });
         const productData = data.addOrder.products;
-
-        productData.forEach((item) => {
-          idbPromise('cart', 'delete', item);
-        });
+        productData.forEach((item) => { idbPromise('cart', 'delete', item)});
       }
 
       //Set a time for the success message to display

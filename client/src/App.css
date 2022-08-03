@@ -231,9 +231,19 @@ form h2 {
   transform: scale(1.1);
 }
 
+.heart {
+  margin: 0 15px;
+  color: #71a6d2;
+  cursor: pointer;
+  box-shadow: 4px 4px 4px rgba(255, 228, 225, 0.4);
+}
+
+.card-bottom .heart-icon {
+  all: unset;
+}
+
 .card-bottom {
   text-align: center;
-  margin-top: 10px;
 }
 
 .card-bottom p {
@@ -244,6 +254,12 @@ form h2 {
 
 .card-bottom p span {
   color: #71a6d2;
+}
+
+.size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* End Product Item Component */
 
