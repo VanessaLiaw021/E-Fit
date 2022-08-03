@@ -1,3 +1,4 @@
+const { convertNodeHttpToRequest } = require('apollo-server-core');
 const mongoose = require('mongoose');
 
 const { Schema, model } = mongoose;
@@ -27,6 +28,10 @@ const productSchema = new Schema({
     type: Number,
     min: 0,
     default: 0
+  },
+  productId: {
+    type: String,
+    required: true
   },
   category: {
     type: Schema.Types.ObjectId,
