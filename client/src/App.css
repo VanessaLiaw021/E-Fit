@@ -714,38 +714,38 @@ form h2 {
   }
   /* End Product Item Component */
 
-    /* Start Single Product Component */
-    .single img {
-      width: 300px;
-      display: block; 
-      margin: 0 auto;
-      padding-left: 12px;
-      padding-right: 12px;
-      border-radius: 10px;
-    }
-  
-    .single-content h2 {
-      font-size: 25px;
-      margin-left: 32px;
-      margin-top: 10px;
-    }
-  
-    .description {
-      width: 280px;
-    }
+  /* Start Single Product Component */
+  .single img {
+    width: 300px;
+    display: block; 
+    margin: 0 auto;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 10px;
+  }
 
-    .button-group {
-      flex-direction: column;
-    }
-    /* End Single Product Component */
+  .single-content h2 {
+    font-size: 25px;
+    margin-left: 32px;
+    margin-top: 10px;
+  }
 
-    /* Start Cart Item Component */
-    .card-wrapper {
-      width: 200px;
-    }
+  .description {
+    width: 280px;
+  }
 
-    .card-wrapper img {
-      width: 230px;
-    }
-    /* End Cart Item Component */
+  .button-group {
+    flex-direction: column;
+  }
+  /* End Single Product Component */
+
+  /* Start Cart Item Component */
+  .card-wrapper {
+    width: 200px;
+  }
+
+  .card-wrapper img {
+    width: 230px;
+  }
+  /* End Cart Item Component */
 }
