@@ -17,6 +17,12 @@ const typeDefs = gql`
     size: [String]
   }
 
+  type Exercise {
+    _id: ID
+    name: String
+    description: String
+  }
+
   type Order {
     _id: ID
     purchaseDate: String
@@ -47,6 +53,7 @@ const typeDefs = gql`
     user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
+    exercises: [Exercise]
   }
 
   type Mutation {
