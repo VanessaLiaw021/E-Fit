@@ -34,16 +34,8 @@ const Button = styled.button`
 const Favorites = ({ item }) => {
 
   const [state, dispatch] = useStoreContext();
-  const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
-  useEffect(() => {
-    if (data) {
-      stripePromise.then((res) => {
-        res.redirectToCheckout({ sessionId: data.checkout.session });
-      });
-    }
-  }, [data]);
-
+  
   useEffect(() => {
     async function getFavorite() {
       const favorite = await idbPromise('favorite', 'get');
@@ -61,10 +53,10 @@ const Favorites = ({ item }) => {
         <h2 className="headings">Favorites</h2>
           {state.favorite.length ? (
             <>
-            <div className="favorite-item">
-              {state.favorite.map(item => (
-                <FavoriteItem key={item._id} item={item}/>
-              ))}
+              <div className="favorite-item">
+                {state.favorite.map(item => (
+                  <FavoriteItem key={item._id} item={item}/>
+                ))}
               </div>
             </>
           ): (
@@ -74,7 +66,6 @@ const Favorites = ({ item }) => {
     </>
   );
 };
-
 
 //Export Cart Component
 export default Favorites;
