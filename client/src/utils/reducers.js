@@ -3,6 +3,7 @@ import {
 } from "react";
 import {
   UPDATE_PRODUCTS,
+  UPDATE_EXERCISES,
   ADD_TO_CART,
   UPDATE_CART_QUANTITY,
   REMOVE_FROM_CART,
@@ -75,6 +76,12 @@ export const reducer = (state, action) => {
         ...state,
         cartOpen: false,
           cart: []
+      };
+    
+    case UPDATE_EXERCISES:
+      return {
+        ...state,
+        exercises: [...action.exercises],
       };
 
     case TOGGLE_CART:
