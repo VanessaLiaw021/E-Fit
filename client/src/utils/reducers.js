@@ -6,6 +6,7 @@ import {
   UPDATE_EXERCISES,
   ADD_TO_CART,
   UPDATE_CART_QUANTITY,
+  UPDATE_SIZE,
   REMOVE_FROM_CART,
   ADD_TO_FAVORITE,
   ADD_MULTIPLE_TO_CART,
@@ -59,6 +60,12 @@ export const reducer = (state, action) => {
             return product
           })
       };
+
+      case UPDATE_SIZE:
+      return {
+        ...state,
+        size: [...action.size],
+      }
 
     case REMOVE_FROM_CART:
       let newState = state.cart.filter(product => {
