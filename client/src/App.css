@@ -310,7 +310,12 @@ form h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  margin: 30px;
+  border: 3px solid #ffe4e1;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 20%;
+  padding-top: 15px;
 } 
 
 .cart-item {
@@ -324,6 +329,7 @@ form h2 {
   width: 300px; 
   height: 300px;
   border-radius: 10px;
+  padding: 15px 15px 0 15px;
 }
 
 .cart-content {
@@ -469,7 +475,7 @@ form h2 {
 /* Start Favorite Component */
 .favorite-item {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }

@@ -61,16 +61,14 @@ const FavoriteItem = ({ item }) => {
   // };
 
   return (
-    <Card>
-      <div className="card-wrapper">
-        <img src={`/images/${item.image}`} alt={item.name} className="favorite-image"/>
-        <div className="fav-wrapper">
-          <p>{item.name}</p>
-          <p className="fav-price">${item.price}</p>
-        </div>
-        <Button onClick={() => removeFromFavorite(item)}>Remove From Favorite</Button>
+    <div className="card-wrapper">
+      <img src={`/images/${item.image}`} alt={item.name} className="favorite-image"/>
+      <div className="fav-wrapper">
+        <p>{item.name}</p>
+        <p className="fav-price">${item.price}</p>
       </div>
-    </Card>
+      <Button onClick={() => removeFromFavorite(item)}>Remove From Favorite</Button>
+    </div>
   );
 };
 
