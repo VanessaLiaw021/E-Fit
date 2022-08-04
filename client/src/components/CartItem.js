@@ -45,6 +45,7 @@ const Button = styled.button`
 
 //Cart Item component
 const CartItem = ({ item }) => {
+  const apparelSizes = ['S', 'M', 'L', 'XL']
 
   const [, dispatch] = useStoreContext();
 
@@ -66,7 +67,7 @@ const CartItem = ({ item }) => {
 
   return (
     <div className="card-wrapper">
-      <img src={`/images/${item.image}`} alt={item.name} className="cart-image"/>
+      <img src={`/images/${item.image}`} alt={item.name} className="cart-image" />
       <div className="card-header-container">
         <Link to={`/products/${item._id}`} className="name"><h3>{item.name}</h3></Link>
         <p>${item.price}</p>
@@ -81,11 +82,10 @@ const CartItem = ({ item }) => {
           onChange={onChange}
         />
         <span className="quantity">Size:</span>
-        <input
-          type="number"
-          placeholder="1"
-          className="quantity-num"
-        />
+        {/* to do: attach onchange to sselect element => onchange will update the state of the cart */}
+        <select>
+          {apparelSizes.map(size => <option>{size}</option>)}
+        </select>
       </CardContainer>
       <Button onClick={() => removeFromCart(item)}>Remove From Cart</Button>
     </div>
