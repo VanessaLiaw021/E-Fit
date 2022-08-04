@@ -1,7 +1,8 @@
+//Import required packages
 const mongoose = require('mongoose');
-
 const { Schema, model } = mongoose;
 
+//Order Schema
 const orderSchema = new Schema({
   purchaseDate: {
     type: Date,
@@ -15,6 +16,8 @@ const orderSchema = new Schema({
   ]
 });
 
+//Create the Order model
 const Order = model('Order', orderSchema);
 
+//Export Order Model
 module.exports = Order;

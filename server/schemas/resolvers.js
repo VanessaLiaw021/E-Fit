@@ -5,33 +5,33 @@ const { signToken } = require('../utils/auth');
 const axios = require('axios').default;
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
-const client = axios.create({
-  baseURL: 'https://wger.de/api/v2/'
-})
+//Base URL for our exercise API
+const client = axios.create({ baseURL: 'https://wger.de/api/v2/'});
 
+//Resolvers
 const resolvers = {
+
+  //Query for getting data
   Query: {
-    categories: async () => {
-      return await Category.find();
-    },
+    
+    //Get Categories
+    categories: async () => { return await Category.find()},
+
+    //Get Products
     products: async (parent, { category, name }) => {
       const params = {};
 
-      if (category) {
-        params.category = category;
-      }
+      if (category) { params.category = category }
 
-      if (name) {
-        params.name = {
-          $regex: name
-        };
-      }
+      if (name) { params.name = { $regex: name }}
 
       return await Product.find(params).populate(['category', 'size']);
     },
-    product: async (parent, { _id }) => {
-      return await Product.findById(_id).populate('category');
-    },
+
+    //Get One Products
+    product: async (parent, { _id }) => { return await Product.findById(_id).populate('category')},
+
+    //Get User
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
@@ -46,18 +46,20 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+
+    //Get Order
     order: async (parent, { _id }, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
           path: 'orders.products',
           populate: 'category'
         });
-
         return user.orders.id(_id);
       }
-
       throw new AuthenticationError('Not logged in');
     },
+
+    //Get checkout 
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ products: args.products });
@@ -95,6 +97,7 @@ const resolvers = {
       return { session: session.id };
     },
 
+    //Get Exercises
     exercises: async () => {
       const response = await client.get('exercise/', { params: { language: 2, limit: 50 } })
       const imageResponse = await client.get('exerciseimage/', { params: { is_main: true, limit: 1000 } });
@@ -105,13 +108,19 @@ const resolvers = {
       return exercises.map(e => ({ name: e.name, description: e.description, _id: e.id, image: e.image }));
     },
   },
+
+  //Mutation for CRUD Operations
   Mutation: {
+
+    //Create new user
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
 
       return { token, user };
     },
+
+    //Add Item to cart
     addOrder: async (parent, { products }, context) => {
       console.log(context);
       if (context.user) {
@@ -124,6 +133,8 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+
+    //Update User
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args, { new: true });
@@ -131,11 +142,15 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+
+    //Update Product
     updateProduct: async (parent, { _id, quantity }) => {
       const decrement = Math.abs(quantity) * -1;
 
       return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
     },
+
+    //Save Product
     saveProduct: async (parent, { productData }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
@@ -147,6 +162,8 @@ const resolvers = {
       };
       throw new AuthenticationError("You need to be logged in to saved Products!");
     },
+
+    //Remove Product
     removeProduct: async (parent, { productData }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
@@ -158,6 +175,8 @@ const resolvers = {
       };
       throw new AuthenticationError("You need to be logged in to saved Products!");
     },
+
+    //Login user
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -178,4 +197,5 @@ const resolvers = {
   }
 };
 
+//Export resolvers
 module.exports = resolvers;
