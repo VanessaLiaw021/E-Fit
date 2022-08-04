@@ -1,6 +1,6 @@
 //Import required packages
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order } = require('../models');
+const { User, Product, Category, Order, Favorite } = require('../models');
 const { signToken } = require('../utils/auth');
 const axios = require('axios').default;
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
@@ -134,12 +134,19 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
 
+    addFavorite: async (parent, { products }, context) => {
+      if (context.user) {
+        const favorite = new Favorite({ products });
+        await User.findByIdAndUpdate(context.user._id, { $push: { favorites: favorite }});
+        return favorite;
+      }
+    },
+
     //Update User
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args, { new: true });
       }
-
       throw new AuthenticationError('Not logged in');
     },
 
@@ -150,31 +157,31 @@ const resolvers = {
       return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
     },
 
-    //Save Product
-    saveProduct: async (parent, { productData }, context) => {
-      if (context.user) {
-        const updatedUser = await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { savedProducts: productData } },
-          { new: true, runValidators: true }
-        );
-        return updatedUser;
-      };
-      throw new AuthenticationError("You need to be logged in to saved Products!");
-    },
+    // //Save Product
+    // saveProduct: async (parent, { productData }, context) => {
+    //   if (context.user) {
+    //     const updatedUser = await User.findOneAndUpdate(
+    //       { _id: context.user._id },
+    //       { $addToSet: { savedProducts: productData } },
+    //       { new: true, runValidators: true }
+    //     );
+    //     return updatedUser;
+    //   };
+    //   throw new AuthenticationError("You need to be logged in to saved Products!");
+    // },
 
-    //Remove Product
-    removeProduct: async (parent, { productData }, context) => {
-      if (context.user) {
-        const updatedUser = await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { removedProducts: {productId: productId} } },
-          { new: true, runValidators: true }
-        );
-        return updatedUser;
-      };
-      throw new AuthenticationError("You need to be logged in to saved Products!");
-    },
+    // //Remove Product
+    // removeProduct: async (parent, { productData }, context) => {
+    //   if (context.user) {
+    //     const updatedUser = await User.findOneAndUpdate(
+    //       { _id: context.user._id },
+    //       { $pull: { removedProducts: {productId: productId} } },
+    //       { new: true, runValidators: true }
+    //     );
+    //     return updatedUser;
+    //   };
+    //   throw new AuthenticationError("You need to be logged in to saved Products!");
+    // },
 
     //Login user
     login: async (parent, { email, password }) => {

@@ -66,6 +66,7 @@ const typeDefs = gql`
     product(_id: ID!): Product
     user: User
     order(_id: ID!): Order
+    favorite(_id: ID!): Favorite
     checkout(products: [ID]!): Checkout
     exercises: [Exercise]
   }

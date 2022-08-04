@@ -30,6 +30,24 @@ export const ADD_ORDER = gql`
   }
 `;
 
+export const ADD_FAVORITE = gql`
+  mutation addFavorite($products: [ID]!) {
+    addFavorite(products: $products) {
+      products {
+        _id
+        name
+        description
+        price
+        size
+        quantity
+        category {
+          name
+        }
+      }
+    }
+  }
+`;
+
 export const ADD_USER = gql`
   mutation addUser(
     $firstName: String!
@@ -51,40 +69,40 @@ export const ADD_USER = gql`
   }
 `;
 
-export const SAVE_PRODUCT = gql`
-  mutation saveProduct($productData: ProductInput!) {
-    saveProduct: (productData: $productData) {
-      _id 
-      email
-      name
-      image
-      price
-      savedProducts{
-        _id
-        name
-        image
-        prices
-        size
-      }
-    }
-  }
-`;
+// export const SAVE_PRODUCT = gql`
+//   mutation saveProduct($productData: ProductInput!) {
+//     saveProduct: (productData: $productData) {
+//       _id 
+//       email
+//       name
+//       image
+//       price
+//       savedProducts{
+//         _id
+//         name
+//         image
+//         prices
+//         size
+//       }
+//     }
+//   }
+// `;
 
-export const REMOVE_BOOK = gql`
-  mutation removeProduct($productId: String!) {
-    removeProduct: (productId: $productId) {
-      _id 
-      email
-      name
-      image
-      price
-      savedProducts{
-        _id
-        name
-        image
-        prices
-        size
-      }
-    }
-  }
-`;
+// export const REMOVE_PRODUCT = gql`
+//   mutation removeProduct($productId: String!) {
+//     removeProduct: (productId: $productId) {
+//       _id 
+//       email
+//       name
+//       image
+//       price
+//       savedProducts{
+//         _id
+//         name
+//         image
+//         prices
+//         size
+//       }
+//     }
+//   }
+// `;

@@ -10,10 +10,9 @@ import {
   ADD_TO_FAVORITE,
   ADD_MULTIPLE_TO_CART,
   ADD_MULTIPLE_TO_FAVORITES,
+  REMOVE_FROM_FAVORITE,
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
-  CLEAR_CART,
-  TOGGLE_CART
 } from "./actions";
 
 export const reducer = (state, action) => {
@@ -29,7 +28,8 @@ export const reducer = (state, action) => {
         ...state,
         cartOpen: true,
         cart: [...state.cart, action.product],
-      };
+    };
+
     case ADD_TO_FAVORITE:
       return {
         ...state,
@@ -69,14 +69,17 @@ export const reducer = (state, action) => {
         ...state,
         cartOpen: newState.length > 0,
           cart: newState
-      };
+    };
 
-    case CLEAR_CART:
+    case REMOVE_FROM_FAVORITE:
+      let anotherState = state.cart.filter(product => {
+        return product._id !== action._id;
+      });
+
       return {
         ...state,
-        cartOpen: false,
-          cart: []
-      };
+        favorite: anotherState
+    };
     
     case UPDATE_EXERCISES:
       return {

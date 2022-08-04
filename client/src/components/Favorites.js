@@ -34,7 +34,6 @@ const Button = styled.button`
 const Favorites = ({ item }) => {
 
   const [state, dispatch] = useStoreContext();
-
   
   useEffect(() => {
     async function getFavorite() {
