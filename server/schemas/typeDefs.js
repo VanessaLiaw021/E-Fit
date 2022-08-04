@@ -40,7 +40,7 @@ const typeDefs = gql`
 
   type Favorite {
     _id: ID
-    products: [Product]
+    products: Product
   }
 
   type User {
@@ -74,7 +74,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     addOrder(products: [ID]!): Order
-    addFavorite(products: [ID]!): Favorite
+    addFavorite(products: ID!): Favorite
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth

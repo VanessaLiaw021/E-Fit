@@ -66,14 +66,9 @@ function ProductItem(item) {
   const addToFavorite = () => {
     const itemInFavorite = favorite.find((favoriteItem) => favoriteItem._id === _id)
     if (itemInFavorite) {
-      idbPromise('favorite', 'put', {
-        ...itemInFavorite,
-      });
+      idbPromise('favorite', 'put', { ...itemInFavorite, });
     } else {
-      dispatch({
-        type: ADD_TO_FAVORITE,
-        product: { ...item }
-      });
+      dispatch({ type: ADD_TO_FAVORITE, product: { ...item }});
       idbPromise('favorite', 'put', { ...item });
     }
   };
@@ -81,9 +76,12 @@ function ProductItem(item) {
   console.log(size, "Sizes");
   return (
     <div className="cardWrapper">
-      <Link to={`/products/${_id}`}>
-        <img alt={name} src={`/images/${image}`}/>
-      </Link>
+      <div className="wrapper">
+        <Link to={`/products/${_id}`}>
+          <img alt={name} src={`/images/${image}`}/>
+        </Link>
+        <button className="heart-icon" onClick={addToFavorite}><FontAwesomeIcon icon={faHeart} className="heart"/></button>
+      </div>
       <div className="card-header-container">
         <Link to={`/products/${_id}`} className="name"><h3>{name}</h3></Link>
         <p>${price}</p>
@@ -92,7 +90,6 @@ function ProductItem(item) {
       </div>
       <div className="card-bottom">
         <Button onClick={addToCart} className="add-cart">Add to cart</Button>
-        <button className="heart-icon" onClick={addToFavorite}><FontAwesomeIcon icon={faHeart} className="heart"/></button>
         <p><span>{quantity}</span> {pluralize("item", quantity)} in stock</p>
       </div>
     </div>

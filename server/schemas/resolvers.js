@@ -136,37 +136,12 @@ const resolvers = {
 
     addFavorite: async (parent, { products }, context) => {
       if (context.user) {
-        const favorite = new Favorite({ products });
+        let favorite = await Favorite.create({ products });
+        favorite = await favorite.populate('products');
         await User.findByIdAndUpdate(context.user._id, { $push: { favorites: favorite }});
         return favorite;
       }
     },
-
-    // //Save Product
-    // saveProduct: async (parent, { productData }, context) => {
-    //   if (context.user) {
-    //     const updatedUser = await User.findOneAndUpdate(
-    //       { _id: context.user._id },
-    //       { $addToSet: { savedProducts: productData } },
-    //       { new: true, runValidators: true }
-    //     );
-    //     return updatedUser;
-    //   };
-    //   throw new AuthenticationError("You need to be logged in to saved Products!");
-    // },
-
-    // //Remove Product
-    // removeProduct: async (parent, { productData }, context) => {
-    //   if (context.user) {
-    //     const updatedUser = await User.findOneAndUpdate(
-    //       { _id: context.user._id },
-    //       { $pull: { removedProducts: {productId: productId} } },
-    //       { new: true, runValidators: true }
-    //     );
-    //     return updatedUser;
-    //   };
-    //   throw new AuthenticationError("You need to be logged in to saved Products!");
-    // },
 
     //Update User
     updateUser: async (parent, args, context) => {

@@ -31,10 +31,10 @@ export const ADD_ORDER = gql`
 `;
 
 export const ADD_FAVORITE = gql`
-  mutation addFavorite($products: [ID]!) {
+  mutation addFavorite($products: ID!) {
     addFavorite(products: $products) {
+      _id
       products {
-        _id
         name
         description
         price
@@ -68,41 +68,3 @@ export const ADD_USER = gql`
     }
   }
 `;
-
-// export const SAVE_PRODUCT = gql`
-//   mutation saveProduct($productData: ProductInput!) {
-//     saveProduct: (productData: $productData) {
-//       _id 
-//       email
-//       name
-//       image
-//       price
-//       savedProducts{
-//         _id
-//         name
-//         image
-//         prices
-//         size
-//       }
-//     }
-//   }
-// `;
-
-// export const REMOVE_PRODUCT = gql`
-//   mutation removeProduct($productId: String!) {
-//     removeProduct: (productId: $productId) {
-//       _id 
-//       email
-//       name
-//       image
-//       price
-//       savedProducts{
-//         _id
-//         name
-//         image
-//         prices
-//         size
-//       }
-//     }
-//   }
-// `;

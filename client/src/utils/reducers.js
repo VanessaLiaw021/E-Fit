@@ -72,7 +72,7 @@ export const reducer = (state, action) => {
     };
 
     case REMOVE_FROM_FAVORITE:
-      let anotherState = state.cart.filter(product => {
+      let anotherState = state.favorite.filter(product => {
         return product._id !== action._id;
       });
 

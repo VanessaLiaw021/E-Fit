@@ -5,28 +5,6 @@ import { useStoreContext } from "../utils/GlobalState";
 import { REMOVE_FROM_FAVORITE } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 
-//Styled Component for div
-const Card = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid #ffe4e1;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  width: 350px;
-  margin: 50px auto;
-`;
-
-//Styled Components for Div
-const CardContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 10px 0 10px;
-  padding: 0 10px;
-  color: #71a6d2;
-`;
-
 //Styled Components for Button
 const Button = styled.button`
   background-color: #71a6d2;
@@ -52,16 +30,8 @@ const FavoriteItem = ({ item }) => {
     idbPromise('favorite', 'delete', { ...item });
   };
 
-  // const onChange = (e) => {
-  //   const value = e.target.value;
-  //   if (value !== e.target._id) {
-  //     dispatch({ type: REMOVE_FROM_FAVORITE, _id: item._id });
-  //     idbPromise('favorite', 'delete', { ...item });
-  //   }
-  // };
-
   return (
-    <div className="card-wrapper">
+    <div className="card-wrapper favWrapper">
       <img src={`/images/${item.image}`} alt={item.name} className="favorite-image"/>
       <div className="fav-wrapper">
         <p>{item.name}</p>

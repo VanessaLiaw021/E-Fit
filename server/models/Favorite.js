@@ -4,12 +4,11 @@ const { Schema, model } = mongoose;
 
 //Favorite Model 
 const favoriteSchema = new Schema({ 
-  products: [
+  products: 
     {
       type: Schema.Types.ObjectId,
       ref: 'Product'
     }
-  ]
 });
 
 //Create Favorite Schema 

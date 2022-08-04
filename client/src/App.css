@@ -236,15 +236,27 @@ form h2 {
   transform: scale(1.1);
 }
 
+.wrapper {
+  position: relative;
+}
+
+.wrapper button {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  left: 10px;
+}
+
+.heart-icon {
+  all: unset;
+  background-color: none;
+}
+
 .heart {
   margin: 0 15px;
   color: #71a6d2;
   cursor: pointer;
   box-shadow: 4px 4px 4px rgba(255, 228, 225, 0.4);
-}
-
-.card-bottom .heart-icon {
-  all: unset;
 }
 
 .card-bottom {
@@ -483,18 +495,16 @@ form h2 {
 .favorite-image {
   width: 300px;
   height: 300px;
+  padding: 15px 15px 0 15px;
+  border-radius: 10px;
 }
 
 .fav-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-top: 10px;
   color: #71a6d2;
-}
-
-.fav-price {
-  padding: 0 30px;
 }
 /* End Favorite Component */
 
@@ -829,4 +839,30 @@ form h2 {
     width: 220px;
   }
   /* End Order History Component */
+}
+
+@media only screen and (max-width: 320px) {
+
+  /* Start Product Item Component */
+  .cardWrapper {
+    display: block;
+    margin: 20px auto;
+  }
+
+  .cardWrapper img {
+    width: 180px;
+    height: 200px;
+  }
+  /* End Product Item Component */
+
+  /* Start Favorite Component */
+  .favWrapper {
+    width: 100%;
+  }
+
+  .favWrapper img {
+    height: 180px;
+    border-radius: 10px;
+  }
+  /* End Favorite Component */
 }
