@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useStoreContext } from "../utils/GlobalState";
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
+import { Link } from 'react-router-dom';
 
 //Styled Component for div
 const Card = styled.div`
@@ -64,32 +65,30 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <Card>
-      <div className="card-wrapper">
-        <img src={`/images/${item.image}`} alt={item.name} className="cart-image"/>
-        <div className="cart-name-price">
-          <p>{item.name}</p>
-          <p className="cart-price">${item.price}</p>
-        </div>
-        <CardContainer>
-          <span className="quantity">Qty:</span>
-          <input
-              type="number"
-              placeholder="1"
-              className="quantity-num"
-              value={item.purchaseQuantity}
-              onChange={onChange}
-          />
-          <span className="quantity">Size:</span>
-          <input
-              type="number"
-              placeholder="1"
-              className="quantity-num"
-          />
-        </CardContainer>
-        <Button onClick={() => removeFromCart(item)}>Remove From Cart</Button>
+    <div className="card-wrapper">
+      <img src={`/images/${item.image}`} alt={item.name} className="cart-image"/>
+      <div className="card-header-container">
+        <Link to={`/products/${item._id}`} className="name"><h3>{item.name}</h3></Link>
+        <p>${item.price}</p>
       </div>
-    </Card>
+      <CardContainer>
+        <span className="quantity">Qty:</span>
+        <input
+          type="number"
+          placeholder="1"
+          className="quantity-num"
+          value={item.purchaseQuantity}
+          onChange={onChange}
+        />
+        <span className="quantity">Size:</span>
+        <input
+          type="number"
+          placeholder="1"
+          className="quantity-num"
+        />
+      </CardContainer>
+      <Button onClick={() => removeFromCart(item)}>Remove From Cart</Button>
+    </div>
   );
 };
 
