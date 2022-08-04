@@ -12,6 +12,7 @@ import {
 import { idbPromise } from '../utils/helpers';
 import styled from 'styled-components';
 import Footer from './Footer';
+import { useLazyQuery } from '@apollo/client';
 
 //Exercise Component
 const Exercises = () => {
@@ -39,9 +40,24 @@ const Exercises = () => {
       });
     }
   }, [exerciseData, loading, dispatch]);
-
+  //   const handleSubmit() => {
+  //   const [getExercise, { loading, error, data }] = useLazyQuery(QUERY_ALL_EXERCISES, { variables: { name: 'Bench Press' }});
+  
+  //   if (loading) return <p>Loading ...</p>;
+  //   if (error) return `Error! ${error}`;
+  
+  //   return (
+  //     <div>
+  //       {data?.dog && <img src={data.dog.displayImage} />}
+  //       <button onSubmit={() => getDog({ variables: { breed: 'bulldog' } })}>
+  //         Click me!
+  //       </button>
+  //     </div>
+  //   );
+  // }
   return (
     <>
+    
     <div className="main exercise">
       <h2 className="headings">Exercises</h2>
 
