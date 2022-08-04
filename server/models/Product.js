@@ -30,10 +30,6 @@ const productSchema = new Schema({
     min: 0,
     default: 0
   },
-  productId: {
-    type: String,
-    required: true
-  },
   category: {
     type: Schema.Types.ObjectId,
     ref: 'Category',
