@@ -69,7 +69,7 @@ const Navbar = ()  => {
 
   return (
     <Header>
-      <Link to="/" className="view-button"><h1 className="logo">E-Fit</h1></Link>
+      <Link to="/" className="view-button"><img id='logo' src={'/images/E-Fit-Logo.png'} alt="exercise demonstration"></img></Link>
       <nav>
         <NavbarWrapper>
           <NavList>
