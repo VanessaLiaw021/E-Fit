@@ -60,6 +60,7 @@ const ProductList = () => {
                 name={product.name}
                 description={product.description}
                 price={product.price}
+                size={product.size}
                 quantity={product.quantity}
               />
             ))}
