@@ -1,4 +1,5 @@
 //Import required packages
+import Card from 'react-bootstrap/Card';
 import React, { useEffect } from 'react';
 import { useStoreContext } from '../utils/GlobalState';
 import { QUERY_ALL_EXERCISES, } from '../utils/queries';
@@ -49,11 +50,15 @@ const Exercises = () => {
       <ul>
         {exercises.map((item) => (
 
-          <li key={item._id}>
-            <h3>{item.name}</h3>
-            <p>{item.description.replaceAll('<p>','').replaceAll('</p>','').replaceAll('<li>', '').replaceAll('</li>', '').replaceAll('<ol>', '').replaceAll('</ol>', '').replaceAll('<em>', '').replaceAll('</em>', '').replaceAll('<ul>', '').replaceAll('</ul>', '')}</p>
-            <img src={item.image || '/images/E-Fit-Logo.png' } alt="exercise demonstration"></img>
-          </li>
+          <Card key={item._id} style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={item.image || '/images/E-Fit-Logo.png'} />
+            <Card.Body>
+              <Card.Title>{item.name}</Card.Title>
+              <Card.Text>
+                {item.description.replaceAll('<p>', '').replaceAll('</p>', '').replaceAll('<li>', '').replaceAll('</li>', '').replaceAll('<ol>', '').replaceAll('</ol>', '').replaceAll('<em>', '').replaceAll('</em>', '').replaceAll('<ul>', '').replaceAll('</ul>', '')}
+              </Card.Text>
+            </Card.Body>
+          </Card>
         ))}
         { }
       </ul>
