@@ -14,6 +14,7 @@ const Header = styled.header`
   align-items: center;
   padding: 25px 30px;
   background-color: #ffe4e1;
+  height: 100px;
 `;  
 
 //Styled Component for the NavBar

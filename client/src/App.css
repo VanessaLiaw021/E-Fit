@@ -103,7 +103,7 @@ header h1 {
 /* End Navbar Component */
 
 /* Start Signup Component */
-form {
+.form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -116,7 +116,7 @@ form {
   box-shadow: 4px 4px 4px rgba(255, 228, 225, 0.4);
 }
 
-form h2 {
+.form h2 {
   text-align: center;
   margin-top: 20px;
 }
@@ -324,6 +324,39 @@ form h2 {
   font-size: 16px;
   box-shadow: 4px 4px 4px rgba(113, 166, 210, 0.6);
   cursor: pointer;
+}
+
+.exercise ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.exercise-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  border: 3px solid #ffe4e1;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+}
+
+.exercise-image img {
+  width: 210px;
+  height: 200px;
+  padding: 15px;
+}
+
+.exercise-content p {
+  color: #71a6d2;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
 }
 /* End Exercise Component */
 
