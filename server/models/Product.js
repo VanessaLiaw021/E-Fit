@@ -1,8 +1,9 @@
+//Import required packages
 const { convertNodeHttpToRequest } = require('apollo-server-core');
 const mongoose = require('mongoose');
-
 const { Schema, model } = mongoose;
 
+//Product Schema
 const productSchema = new Schema({
   name: {
     type: String,
@@ -40,6 +41,8 @@ const productSchema = new Schema({
   }
 });
 
+//Create Product Model
 const Product = model('Product', productSchema);
 
+//Export Product Model
 module.exports = Product;

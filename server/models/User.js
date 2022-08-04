@@ -1,8 +1,11 @@
+//Import required packages
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 const Order = require('./Order');
-const productSchema = require('./Product')
+const Favorite = require('./Favorite');
+const productSchema = require('./Product');
 
+//User Schema
 const userSchema = new Schema({
     firstName: {
         type: String,
@@ -26,24 +29,25 @@ const userSchema = new Schema({
         minlength: 5,
     },
     orders: [Order.schema],
-    savedProduct: [productSchema]
+    favorites: [Favorite.schema]
 });
 
-// set up middleware to create password
+//Set up middleware to create password
 userSchema.pre('save', async function (next) {
     if (this.isNew || this.isModified('password')) {
         const saltRounds = 10;
         this.password = await bcrypt.hash(this.password, saltRounds);
     }
-
     next();
 });
 
-// compare password with the hashed password
+//Compare password with the hashed password
 userSchema.methods.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password);
 };
 
+//Create User Model
 const User = model('User', userSchema);
 
+//Export User Model
 module.exports = User;

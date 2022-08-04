@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { useStoreContext } from "../utils/GlobalState";
-import { REMOVE_FROM_FAVORITE, UPDATE_FAVORITE_QUANTITY } from "../utils/actions";
+import { REMOVE_FROM_FAVORITE } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 
 //Styled Component for div
@@ -52,16 +52,13 @@ const FavoriteItem = ({ item }) => {
     idbPromise('favorite', 'delete', { ...item });
   };
 
-  const onChange = (e) => {
-    const value = e.target.value;
-    if (value === '0') {
-      dispatch({ type: REMOVE_FROM_FAVORITE, _id: item._id });
-      idbPromise('favorite', 'delete', { ...item });
-    } else {
-      dispatch({ type: UPDATE_FAVORITE_QUANTITY, _id: item._id, purchaseQuantity: parseInt(value) });
-      idbPromise('favorite', 'put', { ...item, purchaseQuantity: parseInt(value) });
-    };
-  };
+  // const onChange = (e) => {
+  //   const value = e.target.value;
+  //   if (value !== e.target._id) {
+  //     dispatch({ type: REMOVE_FROM_FAVORITE, _id: item._id });
+  //     idbPromise('favorite', 'delete', { ...item });
+  //   }
+  // };
 
   return (
     <Card>
