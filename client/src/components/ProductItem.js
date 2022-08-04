@@ -87,6 +87,7 @@ function ProductItem(item) {
         <p>${price}</p>
       </div>
       <div className="size">
+        <p>{size}</p>
       </div>
       <div className="card-bottom">
         <Button onClick={addToCart} className="add-cart">Add to cart</Button>
