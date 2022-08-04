@@ -1,7 +1,7 @@
 //Import required packages
 import React, { useEffect } from 'react';
 import { useStoreContext } from '../utils/GlobalState';
-import { QUERY_ALL_EXERCISES,  } from '../utils/queries';
+import { QUERY_ALL_EXERCISES, } from '../utils/queries';
 // QUERY_EXERCISE_IMAGE
 import { useQuery } from '@apollo/client';
 import {
@@ -48,10 +48,14 @@ const Exercises = () => {
 
       <ul>
         {exercises.map((item) => (
-          // {item.image}
-        <li key={item._id}>{item.name}{item.description}</li>
+
+          <li key={item._id}>
+            <h3>{item.name}</h3>
+            <p>{item.description.replaceAll('<p>','').replaceAll('</p>','').replaceAll('<li>', '').replaceAll('</li>', '').replaceAll('<ol>', '').replaceAll('</ol>', '').replaceAll('<em>', '').replaceAll('</em>', '').replaceAll('<ul>', '').replaceAll('</ul>', '')}</p>
+            <img src={item.image || '/images/E-Fit-Logo.png' } alt="exercise demonstration"></img>
+          </li>
         ))}
-        {}
+        { }
       </ul>
     </div>
   );
