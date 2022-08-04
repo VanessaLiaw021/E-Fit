@@ -1,8 +1,8 @@
 //Import required packages
-import Card from 'react-bootstrap/Card';
 import React, { useEffect } from 'react';
 import { useStoreContext } from '../utils/GlobalState';
 import { QUERY_ALL_EXERCISES, } from '../utils/queries';
+import { Link } from 'react-router-dom';
 // QUERY_EXERCISE_IMAGE
 import { useQuery } from '@apollo/client';
 import {
@@ -10,6 +10,8 @@ import {
   // UPDATE_EXERCISE_IMAGE
 } from '../utils/actions';
 import { idbPromise } from '../utils/helpers';
+import styled from 'styled-components';
+import Footer from './Footer';
 
 //Exercise Component
 const Exercises = () => {
@@ -39,7 +41,8 @@ const Exercises = () => {
   }, [exerciseData, loading, dispatch]);
 
   return (
-    <div className="main">
+    <>
+    <div className="main exercise">
       <h2 className="headings">Exercises</h2>
 
       <form className="search-form">
@@ -47,22 +50,30 @@ const Exercises = () => {
         <button>Search</button>
       </form>
 
-      <ul>
-        {exercises.map((item) => (
-
-          <Card key={item._id} style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={item.image || '/images/E-Fit-Logo.png'} />
-            <Card.Body>
-              <Card.Title>{item.name}</Card.Title>
-              <Card.Text>
-                {item.description.replaceAll('<p>', '').replaceAll('</p>', '').replaceAll('<li>', '').replaceAll('</li>', '').replaceAll('<ol>', '').replaceAll('</ol>', '').replaceAll('<em>', '').replaceAll('</em>', '').replaceAll('<ul>', '').replaceAll('</ul>', '')}
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        ))}
-        { }
-      </ul>
+      <div className="exercises">
+        <ul>
+          {exercises.map((item) => (
+            <div className="exercise-card" key={item._id} style={{ width: '18rem' }}>
+              <div className="exercise-image">
+                <Link to={`/exercises/${item._id}`}>
+                  <img variant="top" src={item.image || '/images/E-Fit-Logo.png'} alt={item.name}/>
+                </Link>
+              </div> 
+              <div className="exercise-content">
+                <Link to={`/exercises/${item._id}`} className="line">
+                  <p>{item.name}</p>
+                </Link>
+                {/* <div>
+                  {item.description.replaceAll('<p>', '').replaceAll('</p>', '').replaceAll('<li>', '').replaceAll('</li>', '').replaceAll('<ol>', '').replaceAll('</ol>', '').replaceAll('<em>', '').replaceAll('</em>', '').replaceAll('<ul>', '').replaceAll('</ul>', '')}
+                </div> */}
+              </div>
+            </div>
+          ))}
+        </ul>
+      </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

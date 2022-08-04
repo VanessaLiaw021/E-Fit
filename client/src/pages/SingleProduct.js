@@ -136,8 +136,8 @@ const SingleProduct = () => {
         <Button2><Link to="/products" className="go-back">← Back to Products</Link></Button2>
       </>
     </div>
-  )
-}
+  );
+};
 
 //Export Single Product Page
 export default SingleProduct;
