@@ -106,7 +106,7 @@ This is what the user will see when Sign Up is clicked
 
 * [GitHub Repository](https://github.com/VanessaLiaw021/E-Fit)
 
-* [Heroku](https://project-3.herokuapp.com/)
+* [Heroku](https://polar-shelf-24197.herokuapp.com/)
 
 ## Authors and Acknowledgements
 
