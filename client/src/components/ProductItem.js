@@ -9,8 +9,6 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-
-
 //Styled Components for Button
 const Button = styled.button`
   background-color: #71a6d2;
@@ -25,8 +23,6 @@ const Button = styled.button`
   margin: 5px 0 10px 0;
   cursor: pointer;
 `;
-
-
 
 const ProductItem = (item) => {
   
@@ -49,7 +45,6 @@ const ProductItem = (item) => {
     const isSaved = async item => {
       const values = await idbPromise("favorite", "get");
       const filtered = values.filter(value=> value._id === item._id);
-      console.log(item._id, filtered.length > 0);
       setAdded(filtered.length > 0);
     }
     isSaved(item)
