@@ -64,7 +64,12 @@ export const reducer = (state, action) => {
     case UPDATE_SIZE:
       return {
         ...state,
-        cart: [...action.size],
+        cart: state.cart.map(product => {
+          if (action._id === product._id) {
+            product.size = action.size
+          }
+          return product
+        })
     };
 
     case REMOVE_FROM_CART:

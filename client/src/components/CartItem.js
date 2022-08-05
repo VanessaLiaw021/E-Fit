@@ -31,6 +31,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+const sizes = ["S", "M", "L", "XL"]
 //Cart Item component
 const CartItem = ({ item }) => {
   const [, dispatch] = useStoreContext();
@@ -73,7 +74,7 @@ const CartItem = ({ item }) => {
         {/* to do: attach onchange to sselect element => onchange will update the state of the cart */}
         <div className="size-option">
           <select className="size">
-            {item.size.map(size => <option key={size._id} className="options" value={size.value}>{size}</option>)}
+            {sizes.map((size, index) => <option key={size + index} className="options" value={size} selected={size===item.size}>{size}</option>)}
           </select>
         </div>
       </CardContainer>
