@@ -1,7 +1,7 @@
 //Import required packages and files
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { pluralize } from "../utils/helpers"
+import { pluralize } from "../utils/helpers";
 import { useStoreContext } from "../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY, ADD_TO_FAVORITE} from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
@@ -25,9 +25,8 @@ const Button = styled.button`
 `;
 
 const ProductItem = (item) => {
-
-
   const [state, dispatch] = useStoreContext();
+  const [isAdded, setAdded] = useState(false);
 
   const {
     image,
@@ -37,7 +36,8 @@ const ProductItem = (item) => {
     price,
     quantity
   } = item;
-  const { cart, favorite } = state
+
+  const { cart, favorite } = state;
 
   //Function that add to cart page
   const addToCart = () => {
@@ -66,6 +66,7 @@ const ProductItem = (item) => {
     const itemInFavorite = favorite.find((favoriteItem) => favoriteItem._id === _id)
     if (itemInFavorite) {
       idbPromise('favorite', 'put', { ...itemInFavorite, });
+      setAdded(true);
     } else {
       dispatch({ type: ADD_TO_FAVORITE, product: { ...item }});
       idbPromise('favorite', 'put', { ...item });
@@ -83,7 +84,14 @@ const ProductItem = (item) => {
         <Link to={`/products/${_id}`}>
           <img alt={name} src={`/images/${image}`}/>
         </Link>
-        <button className="heart-icon" onClick={addToFavorite}><FontAwesomeIcon icon={faHeart} className="heart"/></button>
+        <button className="heart-icon">
+          <FontAwesomeIcon 
+            icon={faHeart} 
+            onClick={addToFavorite} 
+            style={{ color: isAdded ? 'red' : ' '}}
+            className="heart"
+          />
+        </button>
       </div>
       <div className="card-header-container">
         <Link to={`/products/${_id}`} className="name"><h3>{name}</h3></Link>
