@@ -38,7 +38,7 @@ const Navbar = ()  => {
     if (Auth.loggedIn()) {
       return (
         <>
-          <Dropdown>
+          <Dropdown className="dropdown-option">
             <Dropdown.Toggle id="dropdown-basic" className="dropdown-icon">
               <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
             </Dropdown.Toggle>
@@ -54,7 +54,7 @@ const Navbar = ()  => {
 
       return (
         <>
-          <Dropdown>
+          <Dropdown className="dropdown-option">
             <Dropdown.Toggle id="dropdown-basic" className="dropdown-icon">
               <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
             </Dropdown.Toggle>
