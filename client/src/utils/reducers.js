@@ -61,11 +61,11 @@ export const reducer = (state, action) => {
           })
       };
 
-      case UPDATE_SIZE:
-      return {
+    case UPDATE_SIZE:
+        return {
         ...state,
-        size: [...action.size],
-      }
+        cart: [...action.size],
+    };
 
     case REMOVE_FROM_CART:
       let newState = state.cart.filter(product => {

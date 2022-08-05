@@ -24,7 +24,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-function ProductItem(item) {
+const ProductItem = (item) => {
 
 
   const [state, dispatch] = useStoreContext();
@@ -73,7 +73,6 @@ function ProductItem(item) {
     }
   };
 
-  console.log(size, "Sizes");
   return (
     <div className="cardWrapper">
       <div className="wrapper">
@@ -87,7 +86,9 @@ function ProductItem(item) {
         <p>${price}</p>
       </div>
       <div className="size">
-        <p>{size}</p>
+        <select>
+          { item.size.map(size => <option>{size}</option>) }
+        </select>
       </div>
       <div className="card-bottom">
         <Button onClick={addToCart} className="add-cart">Add to cart</Button>

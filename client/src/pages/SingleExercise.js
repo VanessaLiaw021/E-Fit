@@ -1,9 +1,10 @@
-import React from 'react'
+//Import required packages
+import React from 'react';
 
-const SingleExercise = (props) => {
+const SingleExercise = () => {
   return (
     <div>
-        <h1>{props.name}</h1>
+        <h1>{}</h1>
     </div>
   )
 }

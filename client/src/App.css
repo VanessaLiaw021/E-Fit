@@ -68,7 +68,7 @@ header h1 {
 }
 
 #logo {
-  height: 200px;
+  height: 170px;
   width: 250px;
   margin-bottom: -50px;
   transition: transform .2s
@@ -288,6 +288,7 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .name {
@@ -300,7 +301,7 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px 0;
+  margin: 40px auto;
 }
 
 .search-form input {
@@ -326,24 +327,22 @@ header h1 {
   cursor: pointer;
 }
 
-.exercise ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+.exercises {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
 }
 
 .exercise-card {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  margin: 20px auto;
+  margin: 40px auto;
   border: 3px solid #ffe4e1;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
   cursor: pointer;
+  padding: 20px;
 }
 
 .exercise-image img {
@@ -354,9 +353,15 @@ header h1 {
 
 .exercise-content p {
   color: #71a6d2;
-  font-size: 16px;
+  font-size: 20px;
   letter-spacing: 2px;
   text-align: center;
+}
+
+.exercise-description {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
 }
 /* End Exercise Component */
 
@@ -553,7 +558,7 @@ header h1 {
 /* End Favorite Component */
 
 /* Media Queries */
-@media only screen and (max-width: 1440px) {
+@media only screen and (min-width: 1140px) and (max-width: 1523px) {
 
   /* Start Home Component */
   .home h2 {
@@ -575,6 +580,16 @@ header h1 {
     width: 300px;
   }
   /* End Product Item Component */
+
+  header {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1150px) {
+  .cardWrapper {
+    width: 40%;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -603,6 +618,16 @@ header h1 {
     width: 265px;
   }
   /* End Product Item Component */
+
+  /* Start Nav Component */
+  header {
+    flex-direction: column;
+  } 
+
+  header ul li {
+    flex-direction: row;
+  }
+  /* End Nav Component */
 }
 
 @media only screen and (max-width: 768px) {
@@ -626,10 +651,8 @@ header h1 {
     flex-direction: column;
   }
 
-  header ul {
-    flex-direction: column;
-  }
-  /* End Navbar Component */
+  
+  /* End Navbar Component
 
   /* Start Product Item Component */
   .cardWrapper {
@@ -638,7 +661,8 @@ header h1 {
     padding: 30px;
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    width: 60%;
+    width: auto;
+    /* width: 60%; */
   }
 
   .cardWrapper img {
@@ -669,6 +693,17 @@ header h1 {
     margin: 0 auto;
   }
   /* End Single Product Component */
+
+  /* Start Excerise Component */
+  .search-form {
+    margin: 20px auto;
+    width: 600px;
+  }
+
+  .exercise-card {
+    flex-direction: column;
+  }
+  /* End Exercise Component */
 }
 
 @media only screen and (max-width: 425px) {
@@ -700,6 +735,12 @@ header h1 {
     margin: 20px auto;
   }
   /* End Home Component */
+
+  /* Start Navbar Component */
+  header ul {
+    flex-direction: column;
+  }
+  /* End Navbar Component */
 
   /* Start Product List Component */
   .main {
@@ -770,6 +811,25 @@ header h1 {
     width: 285px;
   }
   /* End Order History Component */
+
+  /* Start Excerise Component */
+  .search-form {
+    position: relative;
+    right: 80px;
+  }
+
+  .exercises ul {
+    display: block; 
+    margin: 0 auto;
+  }
+
+  .exercise-card {
+    width: 340px;
+    position: relative;
+    right: 48px;
+    
+  }
+  /* End Exercise Component */
 }
 
 @media only screen and (max-width: 375px) {
@@ -815,6 +875,16 @@ header h1 {
     width: 270px;
   }
   /* End Order History Component */
+
+  /* Start Excerise Component */
+  .search-form {
+    margin: 20px auto;
+  }
+
+  .search-form input {
+    width: 40%;
+  }
+  /* End Exercise Component */
 }
 
 @media only screen and (max-width: 325px) {
@@ -909,4 +979,25 @@ header h1 {
     border-radius: 10px;
   }
   /* End Favorite Component */
+
+  /* Start Exericse Component */
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-form {
+    width: 100%;
+    margin: 20px auto;
+    position: relative; 
+    left: 40px;
+  }
+
+  .exercise-card {
+    width: 300px;
+    margin: 20px auto;
+    flex-direction: column;
+    position: relative;
+    right: 65px;
+  }
+  /* End Exercise Component */
 }
