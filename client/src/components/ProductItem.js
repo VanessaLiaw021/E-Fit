@@ -37,7 +37,6 @@ const ProductItem = (item) => {
     price,
     quantity
   } = item;
-  console.log(item, "items");
   const { cart, favorite } = state
 
   //Function that add to cart page
@@ -73,6 +72,11 @@ const ProductItem = (item) => {
     }
   };
 
+  //Function that get the change of the selection size
+  const handleChange = (e) => {
+    
+  };
+
   return (
     <div className="cardWrapper">
       <div className="wrapper">
@@ -86,8 +90,8 @@ const ProductItem = (item) => {
         <p>${price}</p>
       </div>
       <div className="size">
-        <select>
-          { item.size.map(size => <option>{size}</option>) }
+        <select onChange={handleChange}>
+          { size.map(size => <option value={size.value}>{size}</option>)}
         </select>
       </div>
       <div className="card-bottom">

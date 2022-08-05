@@ -62,7 +62,7 @@ export const reducer = (state, action) => {
       };
 
     case UPDATE_SIZE:
-        return {
+      return {
         ...state,
         cart: [...action.size],
     };

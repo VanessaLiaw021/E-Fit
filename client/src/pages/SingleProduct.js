@@ -122,6 +122,9 @@ const SingleProduct = () => {
             <h2>{currentProduct.name}</h2>
             <p className="description">{currentProduct.description}</p>
             <p className="single-price">Price: <span>${currentProduct.price}{' '}</span></p>
+            {/* <select>
+              {currentProduct.size.map(size => <option>{size}</option>)}
+            </select> */}
             <br></br>
             <div className="button-group">
               <Button onClick={addToCart}>Add to Cart</Button>

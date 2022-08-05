@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { useStoreContext } from '../utils/GlobalState';
 import { QUERY_ALL_EXERCISES } from '../utils/queries';
 import { Link } from 'react-router-dom';
-// QUERY_EXERCISE_IMAGE
 import { useQuery } from '@apollo/client';
 import { UPDATE_EXERCISES } from '../utils/actions';
 import { idbPromise } from '../utils/helpers';

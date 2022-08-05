@@ -241,6 +241,7 @@ header h1 {
 
 .card-header-container p {
   color: #71a6d2;
+  margin: 0 15px;
 }
 
 .add-cart:hover {
@@ -565,8 +566,13 @@ header h1 {
     font-size: 45px;
   }
   /* End Home Component */
-  
+
   /* Start Product Item Component */
+  .card-wrapper {
+    width: 30%;
+    border-radius: 10px;
+  }
+
   .cardWrapper {
     border: 3px solid #ffe4e1;
     margin: 30px 40px;
@@ -605,6 +611,11 @@ header h1 {
   /* End Home Component */
 
   /* Start Product Item Component */
+  .card-wrapper {
+    width: 40%;
+    border-radius: 10px;
+  }
+
   .cardWrapper {
     border: 3px solid #ffe4e1;
     margin: 30px 40px;
@@ -650,11 +661,14 @@ header h1 {
   header {
     flex-direction: column;
   }
-
-  
   /* End Navbar Component
 
   /* Start Product Item Component */
+  .card-wrapper {
+    width: 60%;
+    border-radius: 10px;
+  }
+
   .cardWrapper {
     border: 3px solid #ffe4e1;
     margin: 30px 40px;
@@ -775,7 +789,12 @@ header h1 {
   }
   /* End Product Item Component */
 
-   /* Start Single Product Component */
+  /* Start Single Product Component */
+  .card-wrapper {
+    width: 80%;
+    border-radius: 10px;
+  }
+
   .single {
     flex-direction: column;
   }
@@ -848,6 +867,11 @@ header h1 {
   /* End Product Item Component */
 
   /* Start Single Product Component */
+  .card-wrapper {
+    width: 90%;
+    border-radius: 10px;
+  }
+
   .single img {
     width: 320px;
     margin-right: 10px;
@@ -857,6 +881,8 @@ header h1 {
     font-size: 30px;
     margin-left: 10px;
   }
+
+
 
   .description {
     margin-left: 10px;
@@ -942,6 +968,11 @@ header h1 {
   .card-wrapper img {
     width: 230px;
   }
+
+  .size-option {
+    position: relative;
+    bottom: 20px;
+  }
   /* End Cart Item Component */
 
   /* Start Order History Component */
@@ -958,6 +989,11 @@ header h1 {
 @media only screen and (max-width: 320px) {
 
   /* Start Product Item Component */
+  .card-wrapper {
+    width: 95%;
+    border-radius: 10px;
+  }
+
   .cardWrapper {
     display: block;
     margin: 20px auto;
