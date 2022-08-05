@@ -26,11 +26,13 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+
+
 const ProductItem = (item) => {
+  
   const [state, dispatch] = useStoreContext();
   const [isAdded, setAdded] = useState(false);
   const [productSize, setProductSize] = useState('S')
-
 
   const {
     image,
@@ -42,6 +44,16 @@ const ProductItem = (item) => {
   } = item;
 
   const { cart, favorite } = state;
+
+  useEffect(()=>{
+    const isSaved = async item => {
+      const values = await idbPromise("favorite", "get");
+      const filtered = values.filter(value=> value._id === item._id);
+      console.log(item._id, filtered.length > 0);
+      setAdded(filtered.length > 0);
+    }
+    isSaved(item)
+  })
 
   //Function that add to cart page
   const addToCart = (productSize) => {
@@ -85,7 +97,7 @@ const ProductItem = (item) => {
    console.log(e.target.value); 
    setProductSize(e.target.value);
   };
-
+  console.log(isAdded);
   return (
     <div className="cardWrapper">
       <div className="wrapper">
