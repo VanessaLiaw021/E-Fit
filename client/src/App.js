@@ -10,7 +10,6 @@ import Favorites from './components/Favorites';
 import OrderHistory from './pages/OrderHistory';
 import SingleProduct from './pages/SingleProduct';
 import Success from './pages/Success';
-import SingleExercise from './pages/SingleExercise';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 import {
@@ -52,7 +51,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/exercises" element={<Exercises />}/>
-          <Route path="/exercises/:id" element={<SingleExercise />}/>
           <Route path="/products" element={<ProductList />}/>
           <Route path="/products/:id" element={<SingleProduct />}/>
           <Route path="/carts" element={<Cart />}/>

@@ -12,9 +12,9 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 30px;
+  padding: 5px 30px;
   background-color: #ffe4e1;
-  height: 100px;
+  height: auto;
 `;  
 
 //Styled Component for the NavBar
@@ -71,7 +71,7 @@ const Navbar = ()  => {
   return (
     <Header>
       <Link to="/" className="view-button"><img id='logo' src={'/images/E-Fit-Logo.png'} alt="exercise demonstration"></img></Link>
-      <nav>
+      <nav className="navbar">
         <NavbarWrapper>
           <NavList>
             <Link to='/' className="links nav-link middle-nav">Home</Link>

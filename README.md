@@ -1,10 +1,8 @@
-# E-FIT project-3
-
+# E-FIT
 
 ## Table of Contents
-
-1. [User Story](#user-story)
-2. [Description](#description)
+1. [Description](#description)
+2. [User Story](#user-story)
 3. [Usage](#usage)
 4. [Installation](#installation)
 5. [Visuals](#visuals)
@@ -56,39 +54,30 @@ npm run develop
 
 This is the home page of our web application 
 
-![Homepage of E-FIT](./(INSERT HERE).png)
+![Homepage of E-FIT](./client/src/assets/images/home.png)
 
 This is what the user will see when Products is clicked 
 
-![Porduct display](./(INSERT HERE).png)
+![Porduct display](./client/src/assets/images/product.png)
 
 This is what the user will see when Favorites is clicked 
 
-![Favorites Display](./(INSERT HERE).png)
+![Favorites Display](./client/src/assets/images/favorite.png)
 
 This is what the user will see when the Cart is clicked 
 
-![Cart Display](./(INSERT HERE).png)
+![Cart Display](./client/src/assets/images/cart.png)
 
-This is what the user will see when the Checkout is clicked 
-
-![Checkout Display](./(INSERT HERE).png)
-
-This is the search section where a user can search by exercise name 
-
-![Search for exercises name](./(INSERT HERE).png)
-
-This is what the user will see when Sign Up is clicked 
-
-![Sign Up Display](./(INSERT HERE).png)
+This is the exercise section where user can view different exercise
+![Exercise Display](./client/src/assets/images/exercise.png)
 
 This is what the user will see when Sign In is clicked 
 
-![Sign In Display](./(INSERT HERE).png)
+![Sign Up Display](./client/src/assets/images/login.png)
 
-This is what the user will see when Logged Out is clicked 
+This is what the user will see when Sign Up is clicked 
 
-![Logged Out Display](./(INSERT HERE).png)
+![Sign In Display](./client/src/assets/images/signup.png)
 
 ## Features
 
@@ -113,19 +102,12 @@ This is what the user will see when Logged Out is clicked
 - Express.js
 - Wger API
 
-```
-curl -X GET https://wger.de/api/v2/workout/ \
-     -H 'Authorization: Token 99bfe51debc79fc10a58731dcd780f20a79a49e8'
-```
-
 ## Resources
 
-* [GitHub Repository](https://github.com/VanessaLiaw021/project-3)
+* [GitHub Repository](https://github.com/VanessaLiaw021/E-Fit)
 
 * [Heroku](https://project-3.herokuapp.com/)
 
 ## Authors and Acknowledgements
 
-Coded and Develop by Jason Fox, Vanessa Liaw, Raymond Dover and Marquise Allen
-
-
+Coded and Develop by Graham Purnell, Vanessa Liaw, Raymond Dover and Marquise Allen

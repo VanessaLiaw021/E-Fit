@@ -6,24 +6,12 @@ import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 import { Link } from 'react-router-dom';
 
-//Styled Component for div
-const Card = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid #ffe4e1;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  width: 350px;
-  margin: 50px auto;
-`;
-
 //Styled Components for Div
 const CardContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 10px 0 10px;
+  margin: 15px 10px 0 10px;
   padding: 0 10px;
   color: #71a6d2;
 `;
@@ -45,15 +33,15 @@ const Button = styled.button`
 
 //Cart Item component
 const CartItem = ({ item }) => {
-  const apparelSizes = ['S', 'M', 'L', 'XL']
-
   const [, dispatch] = useStoreContext();
 
+  //Remove from cart function
   const removeFromCart = item => {
     dispatch({ type: REMOVE_FROM_CART, _id: item._id });
     idbPromise('cart', 'delete', { ...item });
   };
 
+  //Check the change event
   const onChange = (e) => {
     const value = e.target.value;
     if (value === '0') {
@@ -83,9 +71,11 @@ const CartItem = ({ item }) => {
         />
         <span className="quantity">Size:</span>
         {/* to do: attach onchange to sselect element => onchange will update the state of the cart */}
-        <select>
-          {apparelSizes.map(size => <option>{size}</option>)}
-        </select>
+        <div className="size-option">
+          <select className="size">
+            {item.size.map(size => <option key={size._id} className="options" value={size.value}>{size}</option>)}
+          </select>
+        </div>
       </CardContainer>
       <Button onClick={() => removeFromCart(item)}>Remove From Cart</Button>
     </div>
