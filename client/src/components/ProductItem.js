@@ -3,11 +3,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { pluralize } from "../utils/helpers";
 import { useStoreContext } from "../utils/GlobalState";
-import { ADD_TO_CART, UPDATE_CART_QUANTITY, ADD_TO_FAVORITE} from "../utils/actions";
+import { ADD_TO_CART, UPDATE_CART_QUANTITY, ADD_TO_FAVORITE, UPDATE_SIZE} from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
+
 
 //Styled Components for Button
 const Button = styled.button`
@@ -27,6 +29,8 @@ const Button = styled.button`
 const ProductItem = (item) => {
   const [state, dispatch] = useStoreContext();
   const [isAdded, setAdded] = useState(false);
+  const [productSize, setProductSize] = useState('S')
+
 
   const {
     image,
@@ -40,24 +44,27 @@ const ProductItem = (item) => {
   const { cart, favorite } = state;
 
   //Function that add to cart page
-  const addToCart = () => {
-    const itemInCart = cart.find((cartItem) => cartItem._id === _id)
+  const addToCart = (productSize) => {
+    const itemInCart = cart.find((cartItem) => cartItem._id === _id && cartItem.size === productSize)
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
         _id: _id,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+        size: productSize
       });
       idbPromise('cart', 'put', {
         ...itemInCart,
-        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+        purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+        size: productSize
       });
     } else {
       dispatch({
         type: ADD_TO_CART,
-        product: { ...item, purchaseQuantity: 1 }
+        product: { ...item, purchaseQuantity: 1 , size: productSize},
+        
       });
-      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
+      idbPromise('cart', 'put', { ...item, purchaseQuantity: 1, size: productSize });
     }
   };
 
@@ -75,7 +82,8 @@ const ProductItem = (item) => {
 
   //Function that get the change of the selection size
   const handleChange = (e) => {
-    
+   console.log(e.target.value); 
+   setProductSize(e.target.value);
   };
 
   return (
@@ -103,7 +111,7 @@ const ProductItem = (item) => {
         </select>
       </div>
       <div className="card-bottom">
-        <Button onClick={addToCart} className="add-cart">Add to cart</Button>
+        <Button onClick={()=> addToCart(productSize)} className="add-cart">Add to cart</Button>
         <p><span>{quantity}</span> {pluralize("item", quantity)} in stock</p>
       </div>
     </div>
