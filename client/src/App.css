@@ -639,6 +639,12 @@ header h1 {
     flex-direction: row;
   }
   /* End Nav Component */
+
+  /* Start Sign In Component */
+  .form {
+    width: 50%;
+  }
+  /* End Sign In Component */
 }
 
 @media only screen and (max-width: 768px) {
@@ -661,7 +667,13 @@ header h1 {
   header {
     flex-direction: column;
   }
-  /* End Navbar Component
+  /* End Navbar Component */
+
+  /* Start Sign In/Sign Up Component */
+  .form {
+    width: 50%;
+  }
+  /* End Sign In/Sign Up Component */
 
   /* Start Product Item Component */
   .card-wrapper {
@@ -853,6 +865,13 @@ header h1 {
 
 @media only screen and (max-width: 375px) {
 
+  /* Start SignIn/SignUp Component */
+  .form2 {
+    width: 85%;
+    margin: 40px auto;
+  }
+  /* End SignIn/SignUp Compoenent */
+
   /* Start Product Item Component */
   .cardWrapper {
     border: 3px solid #ffe4e1;
@@ -881,8 +900,6 @@ header h1 {
     font-size: 30px;
     margin-left: 10px;
   }
-
-
 
   .description {
     margin-left: 10px;
@@ -987,6 +1004,13 @@ header h1 {
 }
 
 @media only screen and (max-width: 320px) {
+
+  /* Start SignIn/SignUp Component */
+  .form2 {
+    width: 85%;
+    margin: 40px auto;
+  }
+  /* End SignIn/SignUp Compoenent */
 
   /* Start Product Item Component */
   .card-wrapper {

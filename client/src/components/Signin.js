@@ -48,7 +48,7 @@ const Signin = (props) => {
   };
 
   return (
-    <form className="form" onSubmit={handleFormSubmit}>
+    <form className="form form2" onSubmit={handleFormSubmit}>
       <h2>Login</h2>
       <div className="form-group">
         <label htmlFor="email">Email address:</label>

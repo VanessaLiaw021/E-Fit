@@ -47,7 +47,7 @@ const Signup = (props) => {
   };
 
   return (
-    <form className="form" onSubmit={handleFormSubmit}>
+    <form className="form form2" onSubmit={handleFormSubmit}>
       <h2>Signup</h2>
       <div className="form-group">
         <label htmlFor="firstName">First Name:</label>
