@@ -12,9 +12,7 @@ import { useLazyQuery } from '@apollo/client';
 //Exercise Component
 const Exercises = () => {
   const [state, dispatch] = useStoreContext();
-
   const { exercises } = state;
-  // , QUERY_EXERCISE_IMAGE
   const { loading, data: exerciseData } = useQuery(QUERY_ALL_EXERCISES);
 
   useEffect(() => {
